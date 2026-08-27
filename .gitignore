@@ -1,0 +1,20 @@
+cat > /etc/nixos/.gitignore << 'EOF'
+# Nix build outputs
+result
+result-*
+
+# Editor/swap files
+*.swp
+*~
+.direnv/
+
+# Hardware-specific, usually fine to keep actually — remove this line if you want it tracked
+# hardware-configuration.nix
+
+# Secrets — uncomment/add any that apply to your setup
+# secrets/
+# *.age
+# *.key
+# id_rsa
+# id_ed25519
+EOF

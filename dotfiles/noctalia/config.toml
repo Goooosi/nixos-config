@@ -1,0 +1,183 @@
+[bar.default]
+background_opacity = 0.89999997988343239
+capsule = true
+end = [ "wallpaper", "tray", "control-center", "notifications", "volume", "clipboard", "screenshot", "battery", "session" ]
+layer = "overlay"
+margin_edge = 3
+margin_ends = 200
+smart_auto_hide = true
+start = [ "launcher", "workspaces", "media" ]
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 360.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[lockscreen]
+blur_intensity = 0.99999997764825821
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 854.0
+    cy = 948.0
+    output = "eDP-1"
+    placement_height = 1391.0
+    placement_width = 2226.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[notification]
+background_opacity = 0.96999997831881046
+
+[shell]
+corner_radius_scale = 1.5000000223517418
+
+    [shell.panel]
+    control_center_position = "center"
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "glass"
+
+    [shell.screenshot]
+    directory = "/home/zi/Pictures/Screenshots"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+[theme]
+builtin = "Catppuccin"
+source = "builtin"
+wallpaper_scheme = "m3-tonal-spot"
+
+[wallpaper.default]
+path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+
+[wallpaper.last]
+path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+
+[[wallpaper.favorite]]
+builtin_palette = "Catppuccin"
+palette_source = "builtin"
+path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+theme_mode = "dark"
+
+[widget.active_window]
+capsule = true
+max_length = 145
+title_scroll = "on_hover"
+
+[widget.audio_visualizer]
+capsule = true
+color_2 = "secondary"
+
+[widget.battery]
+show_label = false
+
+[widget.clock]
+format = "{:%-I:%M %p %a, %b %d}"
+
+[widget.control-center]
+custom_image_colorize = true
+
+[widget.launcher]
+capsule = true
+custom_image = "/home/zi/Downloads/Nix_Snowflake_Logo.svg.webp"
+custom_image_colorize = true
+glyph = "accessible"
+
+[widget.media]
+capsule = true
+capsule_radius = "auto"
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.workspaces]
+capsule = true
+show_labels = false
