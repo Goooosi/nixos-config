@@ -55,5 +55,13 @@ flake.modules.nixos.misc= { pkgs, ... }: {
         pkgs.python312
       ];
     };
+  swapDevices = [ {
+  device = "/var/lib/swapfile";
+  size = 16 * 1024;
+    }
+  ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
 };
 }
