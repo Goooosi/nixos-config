@@ -129,8 +129,9 @@ corner_radius_scale = 1.5000000223517418
     variant = "default"
 
 [theme]
-builtin = "Catppuccin"
+mode = "dark"
 source = "builtin"
+builtin = "Rosé Pine"
 wallpaper_scheme = "m3-tonal-spot"
 
 [wallpaper.default]

@@ -63,5 +63,10 @@ flake.modules.nixos.misc= { pkgs, ... }: {
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
   };
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
+
 };
 }
