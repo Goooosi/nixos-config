@@ -6,6 +6,14 @@
     imports = [
       inputs.spicetify-nix.homeManagerModules.spicetify
     ];
+    programs.obsidian = {
+      enable = true;
+      vaults.notes.target="Documents/Obsidian";
+      defaultSettings.app={
+	alwaysUpdateLinks = true;
+	spellcheck = true;
+      };
+    };
 
     programs.spicetify =
       let
@@ -47,7 +55,6 @@
       };
 
  
-
     home.packages = with pkgs; [
       vesktop
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -76,7 +83,7 @@
       usbimager
       proton-vpn
       nil
-      spicetify-cli
+      
     ];
   };
 }

@@ -17,7 +17,10 @@
         bindkey -v
         export EDITOR=nvim
         export VISUAL=nvim
+	export ZLE_RPROMPT_INDENT=0
         fastfetch
+	export LANG=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
       '';
     };
 

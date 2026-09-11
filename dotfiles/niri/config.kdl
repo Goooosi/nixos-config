@@ -344,7 +344,11 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    opacity 0.90
+    opacity 0.9
+    background-effect {
+        blur true
+	xray false
+    }
     geometry-corner-radius 12
     clip-to-geometry true
 }

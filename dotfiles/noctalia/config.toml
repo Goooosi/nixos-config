@@ -83,7 +83,7 @@ background_opacity = 0.96999997831881046
 
 [shell]
 corner_radius_scale = 1.5000000223517418
-
+font = "Maple Mono"
     [shell.panel]
     control_center_position = "center"
     session_placement = "floating"
