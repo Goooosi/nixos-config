@@ -352,6 +352,15 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+layer-rule {
+  match namespace="^noctalia-bar-default"
+  background-effect{
+    blur false
+    xray false
+    }
+}
+
 window-rule {
     match app-id=r#"^kitty$"# 
     opacity 0.90

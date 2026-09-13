@@ -16,6 +16,7 @@
             inputs.self.modules.homeManager.packages
 	    inputs.self.modules.homeManager.dotfiles
 	    inputs.self.modules.homeManager.neovim
+	    inputs.self.modules.homeManager.flatpak
           ];
         };
         home-manager.users.admin = {

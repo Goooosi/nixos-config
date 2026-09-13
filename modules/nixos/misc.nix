@@ -27,8 +27,8 @@ flake.modules.nixos.misc= { pkgs, ... }: {
     layout = "us";
     variant = "";
   };
+  services.flatpak.enable = true;
   services.gvfs.enable = true;
-  services.flatpak.enable = true; 
   #theme thingy
   programs.dconf.enable = true;
   xdg.portal = {
@@ -47,7 +47,6 @@ flake.modules.nixos.misc= { pkgs, ... }: {
   #app image
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
-
   programs.appimage.package =
     pkgs.appimage-run.override {
       extraPkgs = pkgs: [
