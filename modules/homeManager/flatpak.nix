@@ -11,10 +11,12 @@
       }];
       packages = [
         "org.vinegarhq.Sober"
+	"org.jellyfin.JellyfinDesktop"
+	"net.nokyan.Resources"
       ];
 
       overrides = {
-        "org.vinegar.hq.Sober" = {
+        "org.vinegarhq.Sober" = {
 	  Enviornment = {
 	    "__NV_PRIME_RENDER_OFFLOAD" = "1";
             "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
