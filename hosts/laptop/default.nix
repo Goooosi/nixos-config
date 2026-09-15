@@ -14,6 +14,7 @@
     inputs.self.modules.nixos.nixpkgs
     inputs.self.modules.nixos.power
     inputs.self.modules.nixos.users
+    inputs.self.modules.nixos.firmware
   ];
 
   networking.hostName = "nixos";
