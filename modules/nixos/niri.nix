@@ -1,6 +1,6 @@
 { ... }:
 {
-flake.modules.nixos.niri = { ... }: {
-  programs.niri.enable = true;
-};
+  flake.modules.nixos.niri = { pkgs, ... }: {
+    programs.niri.enable = true; 
+  };
 }

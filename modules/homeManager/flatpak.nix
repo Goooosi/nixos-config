@@ -11,8 +11,7 @@
       }];
       packages = [
         "org.vinegarhq.Sober"
-	"org.jellyfin.JellyfinDesktop"
-	"net.nokyan.Resources"
+	      "org.jellyfin.JellyfinDesktop"
       ];
 
       overrides = {

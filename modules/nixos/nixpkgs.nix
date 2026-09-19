@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-flake.modules.nixos.nixpkgs = { pkgs,  ... }: {
+flake.modules.nixos.nixpkgs = { pkgs,  inputs, ... }: {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
@@ -10,8 +14,6 @@ flake.modules.nixos.nixpkgs = { pkgs,  ... }: {
   ];
   environment.systemPackages = with pkgs; [
     brightnessctl
-    neovim
-    kitty
   ];
 };
 }

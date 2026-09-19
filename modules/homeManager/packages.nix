@@ -83,7 +83,7 @@
       usbimager
       proton-vpn
       nil
-      
+      resources 
     ];
   };
 }

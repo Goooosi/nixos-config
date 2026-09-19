@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.homeManager.shell = { pkgs, ... }: {
+  flake.modules.homeManager.zsh = { pkgs, ... }: {
     home.packages = [ pkgs.fastfetch ];
 
     programs.zsh = {
@@ -10,7 +10,7 @@
       syntaxHighlighting.enable = true;
 
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
+        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#legion";
       };
 
       initContent = ''
