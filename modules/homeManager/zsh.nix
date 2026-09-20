@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.zsh = { pkgs, ... }: {
-    home.packages = [ pkgs.fastfetch ];
+    home.packages = with pkgs; [ fastfetch pokeget-rs ];
 
     programs.zsh = {
       enable = true;
@@ -17,10 +17,10 @@
         bindkey -v
         export EDITOR=nvim
         export VISUAL=nvim
-	export ZLE_RPROMPT_INDENT=0
-        fastfetch
-	export LANG=en_US.UTF-8
-	export LC_ALL=en_US.UTF-8
+	      export ZLE_RPROMPT_INDENT=0
+        pokeget umbreon --hide-name | fastfetch --logo-padding-top 4 --logo-padding-left 0 --logo-padding-right 1 --file-raw -
+        export LANG=en_US.UTF-8
+	      export LC_ALL=en_US.UTF-8
       '';
     };
 

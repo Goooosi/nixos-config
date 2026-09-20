@@ -14,7 +14,7 @@
     "kvm-amd" 
     "zswap.enabled=1"
     "zswap.compressor=zstd"
-    "zswap.max_pool_percent=20"
+    "zswap.max_pool_percent=25"
     "zswap.zpool=zsmalloc"
   ];
   boot.extraModulePackages = [ ];
