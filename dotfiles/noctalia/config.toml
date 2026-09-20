@@ -1,15 +1,23 @@
+[backdrop]
+blur_intensity = 0.19999999552965164
+enabled = true
+tint_intensity = 0.24999999441206455
+
 [bar.default]
-background_opacity = 0.89999997988343239
+background_opacity = 0.0
 capsule = true
-end = [ "wallpaper", "tray", "control-center", "notifications", "volume", "clipboard", "screenshot", "battery", "session" ]
-layer = "overlay"
+center = [ "cat", "clock" ]
+end = [ "tray", "temp", "notifications", "volume", "battery", "session" ]
+font_family = "Maple Mono"
+layer = "top"
 margin_edge = 3
-margin_ends = 200
-smart_auto_hide = true
-start = [ "launcher", "workspaces", "media" ]
+margin_ends = 0
+smart_auto_hide = false
+
+[control_center]
+hidden_tabs = [ "monitor", "power", "notifications", "screen-time" ]
 
 [desktop_widgets]
-enabled = false
 schema_version = 2
 widget_order = []
 
@@ -30,13 +38,16 @@ behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
 
     [idle.behavior.lock-and-suspend]
     action = "lock_and_suspend"
-    enabled = false
-    timeout = 900.0
+    enabled = true
+    timeout = 600.0
 
     [idle.behavior.screen-off]
     action = "screen_off"
     enabled = true
     timeout = 300.0
+
+[location]
+address = "New York, United States"
 
 [lockscreen]
 blur_intensity = 0.99999997764825821
@@ -81,17 +92,24 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
 [notification]
 background_opacity = 0.96999997831881046
 
+[plugins]
+enabled = [ "dotnetrob/cat" ]
+
 [shell]
 corner_radius_scale = 1.5000000223517418
-font = "Maple Mono"
+font_family = "Maple Mono"
+
     [shell.panel]
     control_center_position = "center"
     session_placement = "floating"
     session_position = "center"
     transparency_mode = "glass"
 
+    [shell.screen_corners]
+    enabled = true
+
     [shell.screenshot]
-    directory = "/etc/nixos/assets"
+    directory = "/home/zi/Pictures/Screenshots"
 
     [[shell.session.actions]]
     action = "lock"
@@ -108,6 +126,13 @@ font = "Maple Mono"
     variant = "default"
 
     [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
     action = "reboot"
     countdown_seconds = 0.0
     enabled = true
@@ -121,33 +146,25 @@ font = "Maple Mono"
     shortcut = "5"
     variant = "destructive"
 
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 0.0
-    enabled = false
-    shortcut = "3"
-    variant = "default"
-
 [theme]
-mode = "dark"
-source = "builtin"
-builtin = "Rosé Pine"
+builtin = "Catppuccin"
+custom_palette = "Rosé Pine"
 wallpaper_scheme = "m3-tonal-spot"
 
-[wallpaper.default]
-path = "/etc/nixos/assets/2107.w026.n002.637B.p1.637.jpg"
+[wallpaper]
+directory = "/etc/nixos/assets"
 
-[wallpaper.last]
-path = "/etc/nixos/assets/2107.w026.n002.637B.p1.637.jpg"
+    [wallpaper.default]
+    path = "/etc/nixos/assets/cat-walking.jpeg"
 
-[wallpaper.monitors.eDP-1]
-path ="/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+    [wallpaper.last]
+    path = "/etc/nixos/assets/cat-walking.jpeg"
 
-[[wallpaper.favorite]]
-builtin_palette = "Catppuccin"
-palette_source = "builtin"
-path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
-theme_mode = "dark"
+    [wallpaper.monitors.eDP-1]
+    path = "/etc/nixos/assets/cat-walking.jpeg"
+
+[weather]
+unit = "imperial"
 
 [widget.active_window]
 capsule = true
@@ -161,6 +178,9 @@ color_2 = "secondary"
 [widget.battery]
 show_label = false
 
+[widget.cat]
+type = "dotnetrob/cat:cat"
+
 [widget.clock]
 format = "{:%-I:%M %p %a, %b %d}"
 
@@ -169,7 +189,7 @@ custom_image_colorize = true
 
 [widget.launcher]
 capsule = true
-custom_image = "/home/zi/Downloads/Nix_Snowflake_Logo.svg.webp"
+custom_image = "/etc/nixos/assets/Nix_snowflake.svg.webp"
 custom_image_colorize = true
 glyph = "accessible"
 
