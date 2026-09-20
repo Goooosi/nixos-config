@@ -10,15 +10,15 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ 
-    "kvm-amd" 
-    "zswap.enabled=1"
-    "zswap.compressor=zstd"
-    "zswap.max_pool_percent=25"
-    "zswap.zpool=z3fold"
-    "zswap.shrinker_enabled=1"
-  ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.zswap = {
+    enable = true;
+    compressor = "zstd";
+    maxPoolPercent = 25;
+    shrinkerEnabled = true;
+    zpool="zsmalloc";
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3d506471-8e02-44c9-9026-c54c3501ad60";
