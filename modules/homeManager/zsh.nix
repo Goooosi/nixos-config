@@ -10,7 +10,7 @@
       syntaxHighlighting.enable = true;
 
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#legion";
+        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#\$HOST";
       };
 
       initContent = ''

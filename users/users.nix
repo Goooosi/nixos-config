@@ -11,6 +11,7 @@
   };
 
   home-manager = {
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users.zi = {
       imports = [

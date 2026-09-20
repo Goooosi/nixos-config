@@ -27,7 +27,6 @@ flake.modules.nixos.misc= { pkgs, ... }: {
     layout = "us";
     variant = "";
   };
-  services.flatpak.enable = true;
   services.gvfs.enable = true;
   #theme thingy
   programs.dconf.enable = true;
@@ -53,28 +52,10 @@ flake.modules.nixos.misc= { pkgs, ... }: {
         pkgs.python312
       ];
     };
-  swapDevices = [ {
-  device = "/var/lib/swapfile";
-  size = 16 * 1024;
-    }
-  ];
+
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
   };
 
-  fonts.packages = with pkgs; [
-    maple-mono.truetype
-    maple-mono.NF-unhinted
-  ];
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      monospace = [ "Maple Mono NF" ];
-      sansSerif = [ "Noto Sans" ];
-      serif     = [ "Noto Serif" ];
-      emoji     = [ "Noto Color Emoji" ];
-    };
-  };
-  fonts.fontDir.enable = true; 
 };
 }

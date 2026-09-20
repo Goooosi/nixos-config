@@ -91,7 +91,7 @@ font = "Maple Mono"
     transparency_mode = "glass"
 
     [shell.screenshot]
-    directory = "/home/zi/Pictures/Screenshots"
+    directory = "/etc/nixos/assets"
 
     [[shell.session.actions]]
     action = "lock"
@@ -135,13 +135,13 @@ builtin = "Rosé Pine"
 wallpaper_scheme = "m3-tonal-spot"
 
 [wallpaper.default]
-path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+path = "/etc/nixos/assets/2107.w026.n002.637B.p1.637.jpg"
 
 [wallpaper.last]
-path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+path = "/etc/nixos/assets/2107.w026.n002.637B.p1.637.jpg"
 
 [wallpaper.monitors.eDP-1]
-path = "/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
+path ="/home/zi/Pictures/Wallpapers/2107.w026.n002.637B.p1.637.jpg"
 
 [[wallpaper.favorite]]
 builtin_palette = "Catppuccin"
