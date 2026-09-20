@@ -3,8 +3,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.self.modules.nixos.base
-    (inputs.self + "/users/user.nix")
+    (inputs.self + "/users/users.nix")
   ];
-  networking.hostname="acer";
+  networking.hostName="acer";
   system.stateVersion = "26.05";
 }
