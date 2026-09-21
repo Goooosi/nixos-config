@@ -2,7 +2,7 @@
 {
   flake.modules.nixos.legion-fan-curve = { pkgs, ... }: {
     environment.systemPackages = [ pkgs.lenovo-legion ];
-    boot.kernelModules = [ "lenovo-legion-module" ];
+    boot.kernelModules = [ "lenovo-legion" ];
     boot.extraModulePackages = with pkgs.linuxPackages; [ lenovo-legion-module ];
     
     systemd.services.lenovo-legion-fancurve = let
