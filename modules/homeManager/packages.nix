@@ -67,6 +67,7 @@
       usbimager
       proton-vpn
       resources
+      btop
     ];
   };
 }

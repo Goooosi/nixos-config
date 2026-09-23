@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
 flake.modules.nixos.misc= { pkgs, ... }: {
+  imports = [ inputs.noctalia-greeter.nixosModules.default ];
   #zsh shell
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
@@ -35,14 +36,16 @@ flake.modules.nixos.misc= { pkgs, ... }: {
     extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
     config.common.default = [ "gtk" ];
   };
-  #greetd
-  services.greetd = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
-    settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --cmd niri-session";
-      user = "greeter";
+    settings = {
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+        path = "${pkgs.bibata-cursors}/share/icons";
+      };
     };
-  };
+  };  
   #app image
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
