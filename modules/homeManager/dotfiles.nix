@@ -9,7 +9,7 @@
     xdg.configFile."kitty".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/kitty";
 
-    home.file.".config/noctalia/config.toml".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/noctalia/config.toml";
+    home.file.".config/noctalia".source =
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/noctalia";
   };
 }

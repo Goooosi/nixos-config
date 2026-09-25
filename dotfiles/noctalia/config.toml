@@ -6,9 +6,14 @@ tint_intensity = 0.24999999441206455
 [bar.default]
 background_opacity = 0.0
 capsule = true
+capsule_border = "primary"
+capsule_fill = "surface"
+capsule_foreground = "on_surface"
 center = [ "cat", "clock" ]
+color = "primary"
 end = [ "tray", "temp", "notifications", "volume", "battery", "session" ]
 font_family = "Maple Mono"
+icon_color = "error"
 layer = "top"
 margin_edge = 3
 margin_ends = 0
@@ -147,21 +152,21 @@ font_family = "Maple Mono"
     variant = "destructive"
 
 [theme]
-builtin = "Catppuccin"
-custom_palette = "Rosé Pine"
-wallpaper_scheme = "m3-tonal-spot"
+custom_palette = "umbreon"
+pure_black_dark = true
+source = "custom"
 
 [wallpaper]
 directory = "/etc/nixos/assets"
 
     [wallpaper.default]
-    path = "/etc/nixos/assets/cat-walking.jpeg"
+    path = "/etc/nixos/assets/wall9.jpg"
 
     [wallpaper.last]
-    path = "/etc/nixos/assets/cat-walking.jpeg"
+    path = "/etc/nixos/assets/wall9.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/etc/nixos/assets/cat-walking.jpeg"
+    path = "/etc/nixos/assets/wall9.jpg"
 
 [weather]
 unit = "imperial"
@@ -179,6 +184,8 @@ color_2 = "secondary"
 show_label = false
 
 [widget.cat]
+cat_color = "error"
+cat_color_mode = "custom"
 type = "dotnetrob/cat:cat"
 
 [widget.clock]

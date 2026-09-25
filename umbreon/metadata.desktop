@@ -1,0 +1,8 @@
+[SddmGreeterTheme]
+Name=umbreon
+Description=umbreon version of qlock pixel-munchlax
+Author=Darkkal44
+Type=sddm-theme
+MainScript=Main.qml
+ConfigFile=theme.conf
+QtVersion=6
