@@ -70,11 +70,11 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 720.0
-    cx = 854.0
-    cy = 948.0
+    cx = 640.6917724609375
+    cy = 639.95111083984375
     output = "eDP-1"
-    placement_height = 1391.0
-    placement_width = 2226.0
+    placement_height = 939.0
+    placement_width = 1670.0
     rotation = 0.0
     type = "login_box"
 
@@ -103,6 +103,9 @@ enabled = [ "dotnetrob/cat" ]
 [shell]
 corner_radius_scale = 1.5000000223517418
 font_family = "Maple Mono"
+
+    [shell.greeter_sync]
+    auto_sync = true
 
     [shell.panel]
     control_center_position = "center"
@@ -152,6 +155,7 @@ font_family = "Maple Mono"
     variant = "destructive"
 
 [theme]
+community_palette = "Rose Pine Moon"
 custom_palette = "umbreon"
 pure_black_dark = true
 source = "custom"
@@ -188,6 +192,9 @@ cat_color = "error"
 cat_color_mode = "custom"
 type = "dotnetrob/cat:cat"
 
+[widget.cat_2]
+type = "dotnetrob/cat:cat"
+
 [widget.clock]
 format = "{:%-I:%M %p %a, %b %d}"
 
@@ -208,4 +215,6 @@ title_scroll = "on_hover"
 
 [widget.workspaces]
 capsule = true
+empty_color = "error"
+occupied_color = "error"
 show_labels = false
