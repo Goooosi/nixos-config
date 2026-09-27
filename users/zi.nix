@@ -9,7 +9,7 @@
   imports = [
     inputs.self.modules.homeManager.desktop
     inputs.self.modules.homeManager.dotfiles
-    # inputs.self.modules.homeManager.flatpak   
+    inputs.self.modules.homeManager.spicetify     
     # inputs.self.modules.homeManager.music   
     inputs.self.modules.homeManager.zsh
     inputs.self.modules.homeManager.packages
