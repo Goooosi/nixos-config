@@ -1,9 +1,9 @@
 { ... }:
 {
-  flake.modules.nixos.legion-fan-curve = { pkgs, ... }: {
+  flake.modules.nixos.legion-fan-curve = { config, pkgs, ... }: {
     environment.systemPackages = [ pkgs.lenovo-legion ];
     boot.kernelModules = [ "lenovo-legion" ];
-    boot.extraModulePackages = with pkgs.linuxPackages; [ lenovo-legion-module ];
+    boot.extraModulePackages = [ config.boot.kernelPackages.lenovo-legion-module ];
 
     systemd.services.lenovo-legion-fancurve = let
       curveFile = pkgs.writeText "fan-curve.conf" ''

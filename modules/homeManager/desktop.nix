@@ -14,7 +14,7 @@
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       swaybg
       gnome-themes-extra
-
+      mpvpaper
     ];
 
   };

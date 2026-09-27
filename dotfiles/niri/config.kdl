@@ -172,12 +172,12 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#c4a7e7"
+        active-color "#FFEB89"
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#26233a" 
+        inactive-color "#EFCB69"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -202,10 +202,10 @@ layout {
         off
 
         width 4
-        active-color "#c4a7e7"
-	inactive-color "#403d52"
+        active-color "#414E54"
+        inactive-color "#1C2124"
         // Color of the border around windows that request your attention.
-        urgent-color "#eb6f92"
+        urgent-color "#DE635D"
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
         //
@@ -346,11 +346,12 @@ window-rule {
 window-rule {
     opacity 0.9
     background-effect {
-        blur true
-	xray false
+    blur true
+	  xray false
     }
     geometry-corner-radius 12
     clip-to-geometry true
+    draw-border-with-background false
 }
 window-rule {
   match app-id="^spotify$"

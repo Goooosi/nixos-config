@@ -1,15 +1,5 @@
 return {
   { 
-    "rose-pine/neovim", 
-    name = "rose-pine", 
-    priority = 1000,
-    config = function()
-      require("rose-pine").setup({ variant = "moon" })
-      vim.cmd.colorscheme("rose-pine-moon")
-    end 
-  },
-
-  { 
     "nvim-telescope/telescope.nvim", 
     tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },

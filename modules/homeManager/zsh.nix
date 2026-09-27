@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.zsh = { pkgs, ... }: {
-    home.packages = with pkgs; [ fastfetch pokeget-rs ];
+    home.packages = with pkgs; [ fastfetch ];
 
     programs.zsh = {
       enable = true;
@@ -11,6 +11,10 @@
 
       shellAliases = {
         rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#\$HOST";
+        fanSpeed = "nix-shell -p lm_sensors --run 'while true; do echo \"\$(date +%T) \$(sensors | grep Tctl) | fans: \$(cat /sys/class/hwmon/hwmon*/fan*_input | tr \"\\n\" \" \")\"; sleep 1; done'";
+        computerActivateLarp = "nix-shell -p cmatrix --run cmatrix";
+        deleteGeneration = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations $(sudo nix-env --profile /nix/var/nix/profiles/system --list-generations | head -n -10 | awk '{print $1}')";
+        listGenerations = "nixos-rebuild list-generations";
       };
 
       initContent = ''
@@ -18,7 +22,7 @@
         export EDITOR=nvim
         export VISUAL=nvim
 	      export ZLE_RPROMPT_INDENT=0
-        pokeget umbreon --hide-name | fastfetch --logo-padding-top 4 --logo-padding-left 0 --logo-padding-right 1 --file-raw -
+        fastfetch --logo-padding-top 4 --logo-padding-left 0 --logo-padding-right 1 --file-raw /etc/nixos/assets/umbreon_sprite
         export LANG=en_US.UTF-8
 	      export LC_ALL=en_US.UTF-8
       '';

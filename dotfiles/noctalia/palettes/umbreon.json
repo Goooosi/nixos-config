@@ -1,50 +1,28 @@
 {
   "dark": {
-    "mPrimary": "#FFE600",
-    "mOnPrimary": "#000000",
-    "mSecondary": "#FFD000",
-    "mOnSecondary": "#000000",
-    "mTertiary": "#8B0000",
-    "mOnTertiary": "#FFFFFF",
-    "mError": "#E60000",
-    "mOnError": "#000000",
-    "mSurface": "#000000",
+    "mSurface": "#1C2124",
+    "Surface Variant": "#414E54",
+    "mPrimary": "#EFCB69",
+    "mSecondary": "#DE635D",
+    "Secondary Variant": "#DE635D",
+    "mSecondaryContainer": "#DE635D",
+    "mOnSecondaryContainer": "#FFFFFF",
+    "mHover": "#DE635D",
     "mOnSurface": "#FFFFFF",
-    "mSurfaceVariant": "#1A1A1A",
-    "mOnSurfaceVariant": "#FFE600",
-    "mOutline": "#FFE600",
-    "mShadow": "#000000",
-    "mHover": "#2A1A1A",
-    "mOnHover": "#FFE600",
-    "terminal": [
-      "#000000", "#E60000", "#FFE600", "#FFD000",
-      "#1A1A1A", "#8B0000", "#FFE600", "#FFFFFF",
-      "#1A1A1A", "#FF3333", "#FFE600", "#FFD000",
-      "#2A1A1A", "#8B0000", "#FFE600", "#FFFFFF"
-    ]
-  },
-  "light": {
-    "mPrimary": "#B8A600",
-    "mOnPrimary": "#000000",
-    "mSecondary": "#A68F00",
-    "mOnSecondary": "#000000",
-    "mTertiary": "#8B0000",
+    "mOnSurfaceVariant": "#EFCB69",
+    "mOnPrimary": "#1C2124",
+    "mOnSecondary": "#FFFFFF",
+    "mOnHover": "#FFFFFF",
+    "mTertiary": "#DE635D",
     "mOnTertiary": "#FFFFFF",
-    "mError": "#B30000",
+    "mError": "#DE635D",
     "mOnError": "#FFFFFF",
-    "mSurface": "#FFFFFF",
-    "mOnSurface": "#000000",
-    "mSurfaceVariant": "#EEEEEE",
-    "mOnSurfaceVariant": "#000000",
-    "mOutline": "#B8A600",
-    "mShadow": "#000000",
-    "mHover": "#EEDDDD",
-    "mOnHover": "#000000",
+    "mOutline": "#EFCB69",
+    "Shadow": "#000000",
     "terminal": [
-      "#FFFFFF", "#B30000", "#B8A600", "#A68F00",
-      "#EEEEEE", "#8B0000", "#B8A600", "#000000",
-      "#EEEEEE", "#CC3333", "#B8A600", "#A68F00",
-      "#EEDDDD", "#8B0000", "#B8A600", "#000000"
+      "#1C2124", "#DE635D", "#EFCB69", "#EFCB69", "#414E54", "#DE635D", "#DE635D", "#FFFFFF",
+      "#414E54", "#FF837D", "#FFEB89", "#FFEB89", "#52626A", "#FF837D", "#FF837D", "#FFFFFF"
     ]
   }
 }
+

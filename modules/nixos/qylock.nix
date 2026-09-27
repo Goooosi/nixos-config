@@ -19,25 +19,33 @@
     {
       services.displayManager.sddm = {
         enable = true;
-        wayland.enable = true; 
+        wayland.enable = true;
+        wayland.compositor = "kwin";
         theme = "umbreon"; 
-        settings = {
-          Theme = {
-            CursorTheme = "Bibata-Modern-Ice";
-            CursorSize = 24;
-          };
-        };
-
         extraPackages = with pkgs.kdePackages; [
           qtmultimedia
           qtsvg
           qt5compat
           qtshadertools
+          pkgs.bibata-cursors 
         ];
+        settings = {
+          Theme = {
+            cursorTheme = "Bibata-Modern-Ice";
+            cursorSize = 24;
+          };
+        };
+      };
+
+      systemd.services.display-manager.environment = {
+        KWIN_FORCE_SW_CURSOR = "1";
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24"; 
+        XCURSOR_PATH = "${pkgs.bibata-cursors}/share/icons";
       };
 
       environment.systemPackages = with pkgs; [
-        bibata-cursors
+        bibata-cursors 
         gst_all_1.gstreamer
         gst_all_1.gst-plugins-base
         gst_all_1.gst-plugins-good
@@ -53,6 +61,8 @@
       };
     };
 }
+
+
 
 
 

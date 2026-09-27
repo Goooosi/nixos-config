@@ -208,4 +208,6 @@ title_scroll = "on_hover"
 
 [widget.workspaces]
 capsule = true
+empty_color = "error"
+occupied_color = "error"
 show_labels = false

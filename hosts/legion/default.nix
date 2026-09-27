@@ -8,12 +8,15 @@
     inputs.self.modules.nixos.audio
     inputs.self.modules.nixos.game
     inputs.self.modules.nixos.nvidia
-    inputs.self.modules.nixos.firmware
     inputs.self.modules.nixos.legion-fan-curve
     (inputs.self + "/users/users.nix")
     inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
-  # 2. Configure Flatpak globally for the system
+  home-manager.users.zi = {
+    imports = [
+      inputs.self.modules.homeManager.music 
+    ];
+  };
   services.flatpak = {
     enable = true;
     remotes = [{

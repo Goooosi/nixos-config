@@ -13,4 +13,7 @@ require("config.options")
 require("config.keymaps")
 require("lazy").setup("plugins")
 
+vim.opt.termguicolors = true
+vim.cmd([[colorscheme umbreon]])
+
 vim.opt.clipboard = "unnamedplus"

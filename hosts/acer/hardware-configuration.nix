@@ -12,16 +12,11 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.zswap = {
-    enable = true;
-    compressor = "zstd";
-    maxPoolPercent = 25;
-    shrinkerEnabled = true;
-    zpool="zsmalloc"; 
-  };
+  nix.settings.auto-optimise-store = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f60122bf-3077-4cb5-9228-d865b48e4fd2";
       fsType = "ext4";
+      options = [ "defaults" "noatime" ];
     };
 
   fileSystems."/boot" =
