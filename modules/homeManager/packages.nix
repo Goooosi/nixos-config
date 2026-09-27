@@ -30,8 +30,8 @@
           replaceColors = true;
           overwriteAssets = true;
           
-          additionalCss = '' 
-            /* Hard override for Ziro theme custom background properties */
+  
+           additionalCss = '' 
             :root {
               --spice-main: #1C2124 !important;
               --spice-sidebar: #1C2124 !important;
@@ -45,7 +45,27 @@
               background-image: none !important;
             }
 
-            /* Remove the large outer border/box surrounding the entire track container */
+            .main-topBar-container,
+            .main-topBar-background,
+            .main-topBar-overlay {
+              background-color: transparent !important;
+              background: transparent !important;
+              box-shadow: none !important;
+            }
+
+            .main-entityHeader-container {
+              padding-top: 90px !important;
+              position: relative !important;
+              z-index: 1 !important;
+            }
+
+            .main-entityHeader-topbarContent,
+            .main-home-filterChipsContainer {
+              display: none !important;
+              height: 0px !important;
+              visibility: hidden !important;
+            }
+
             .main-trackList-trackList,
             [role="grid"],
             .main-trackList-indexableElement {
@@ -54,7 +74,6 @@
               background-color: transparent !important;
             }
 
-            /* Strip the bright transparent overlay on individual song rows and remove dividers */
             [data-testid="tracklist-row"],
             .main-trackList-trackListRow {
               background-color: rgba(28, 33, 36, 0.6) !important;
@@ -63,7 +82,6 @@
               box-shadow: none !important;
             }
 
-            /* Clear individual cell dividers or custom row lines injected by Ziro */
             .main-trackList-trackListRowGrid,
             [role="row"] {
               border: none !important;
@@ -71,13 +89,11 @@
               box-shadow: none !important;
             }
 
-            /* Hover state for the cards */
             [data-testid="tracklist-row"]:hover,
             .main-trackList-trackListRow:hover {
               background-color: #414E54 !important;
             }
 
-            /* Custom playback time position alignment CSS */
             [data-testid="playback-position"],
             [data-testid="playback-duration"] {
               position: absolute !important;
@@ -96,7 +112,9 @@
             [data-testid="playback-duration"] {
               right: -3.5px !important;
             }
-          ''; 
+          '';
+
+
         };
 
         customColorScheme = {
