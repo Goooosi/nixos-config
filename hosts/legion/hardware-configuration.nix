@@ -14,6 +14,7 @@
   boot.extraModulePackages = [ ];
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "50%";
+  boot.tmp.cleanOnBoot = true;
   nix.settings.auto-optimise-store = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3d506471-8e02-44c9-9026-c54c3501ad60";

@@ -12,6 +12,9 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.tmp.cleanOnBoot = true;
+  boot.tmp.tmpfsSize = "50%";
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
   nix.settings.auto-optimise-store = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f60122bf-3077-4cb5-9228-d865b48e4fd2";
