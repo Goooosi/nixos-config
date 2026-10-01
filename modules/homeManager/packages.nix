@@ -24,6 +24,7 @@
       usbimager
       vesktop
       xwayland-satellite
+      wvkbd
     ];
   };
 }
