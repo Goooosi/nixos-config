@@ -1,6 +1,8 @@
 { inputs, ... }:
 {
   flake.modules.homeManager.desktop = { pkgs, ... }: {
+    
+    programs.noctalia.enable = true;
     dconf.enable = true;
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     
