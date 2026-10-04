@@ -2,12 +2,13 @@
 {
 flake.modules.nixos.nvidia = { config, pkgs, ... }: {
    # Video Drivers
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = true;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     

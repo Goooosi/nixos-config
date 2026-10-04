@@ -11,6 +11,7 @@
       maxPoolPercent = 25;
       shrinkerEnabled = true;
       zpool="zsmalloc"; 
+    };
+    boot.kernel.sysctl = { "vm.swappiness" = 10; };
   };
-   };
 }
