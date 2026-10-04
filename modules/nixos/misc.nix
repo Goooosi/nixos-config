@@ -44,8 +44,5 @@ flake.modules.nixos.misc= { pkgs, ... }: {
         pkgs.python312
       ];
     };
-
-  nix.optimise.automatic = true;
-  nix.optimise.dates = [ "03:45" ];
   };
 }

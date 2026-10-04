@@ -14,6 +14,8 @@
   boot.extraModulePackages = [ ];
   boot.tmp.cleanOnBoot = true;
   boot.tmp.tmpfsSize = "50%";
+  boot.zswap.maxPoolPercent = 25;
+  boot.kernel.sysctl = { "vm.swappiness" = 40; };
   systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
   nix.settings.auto-optimise-store = true;
   fileSystems."/" =

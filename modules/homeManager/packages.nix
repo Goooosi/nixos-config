@@ -25,6 +25,7 @@
       vesktop
       xwayland-satellite
       wvkbd
+      localsend
     ];
   };
 }

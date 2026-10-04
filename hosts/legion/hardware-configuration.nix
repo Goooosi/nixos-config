@@ -13,8 +13,11 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "50%";
+  boot.tmp.tmpfsSize = "25%";
+  boot.zswap.maxPoolPercent = 15;
   boot.tmp.cleanOnBoot = true;
+  boot.kernel.sysctl = { "vm.swappiness" = 15; };
+  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
   nix.settings.auto-optimise-store = true;
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3d506471-8e02-44c9-9026-c54c3501ad60";
