@@ -18,6 +18,8 @@
       nil
       gh
       gcc
+      jdk17
+      jdt-language-server
     ];
     home.sessionVariables = {
       EDITOR = "nvim";

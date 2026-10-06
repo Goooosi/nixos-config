@@ -15,7 +15,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "lua", "nix", "python", "bash", "typescript", "tsx" },
+        ensure_installed = { "lua", "nix", "python", "bash", "typescript", "tsx", "java" },
         highlight = { enable = true },
       })
     end 
@@ -63,6 +63,16 @@ return {
         settings = { Lua = { diagnostics = { globals = { "vim" } } } },
       })
       vim.lsp.enable("lua_ls")
+      vim.lsp.config("jdtls", {
+        cmd = {
+          "jdtls",
+          "-data", vim.fn.stdpath("cache") .. "/jdtls/" .. vim.fs.basename(vim.fn.getcwd()),
+        },
+        filetypes = { "java" },
+        root_markers = { "gradlew", "settings.gradle", "build.gradle", ".git" },
+        capabilities = capabilities,
+      })
+      vim.lsp.enable("jdtls")
     end,
   },
 

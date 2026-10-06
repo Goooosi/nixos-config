@@ -11,7 +11,7 @@
       power 
       qylock
       hardware
-      noctalia-cache
+      noctalia-cache 
     ];
   };
 }
