@@ -44,5 +44,17 @@ flake.modules.nixos.misc= { pkgs, ... }: {
         pkgs.python312
       ];
     };
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    alsa-lib
+    libX11
+    libXcursor
+    libXrandr
+    libXext
+  ];
+
   };
 }
