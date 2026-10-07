@@ -26,6 +26,7 @@
       xwayland-satellite
       wvkbd
       localsend
+      lazygit
     ];
   };
 }
