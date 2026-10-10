@@ -22,8 +22,7 @@
       python314
       resources
       usbimager
-      vesktop
-      xwayland-satellite
+      vesktop 
       wvkbd
       localsend
       lazygit

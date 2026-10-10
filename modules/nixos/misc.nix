@@ -27,9 +27,12 @@ flake.modules.nixos.misc= { pkgs, ... }: {
     layout = "us";
     variant = "";
   };
+
+  # Gnome keyring and nautilus
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
   services.gvfs.enable = true;
   #theme thingy
-  programs.dconf.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
@@ -44,6 +47,7 @@ flake.modules.nixos.misc= { pkgs, ... }: {
         pkgs.python312
       ];
     };
+  # Nix compalibility
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc

@@ -11,7 +11,7 @@
     inputs.self.modules.nixos.legion-fan-curve
     (inputs.self + "/users/users.nix")
     inputs.nix-flatpak.nixosModules.nix-flatpak
-    inputs.self.modules.nixos.printing
+    # inputs.self.modules.nixos.printing
   ];
   home-manager.users.zi = {
     imports = [
