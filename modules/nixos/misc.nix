@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 {
-flake.modules.nixos.misc= { pkgs, ... }: {
+flake.modules.nixos.misc= { pkgs, lib, ... }: {
   #zsh shell
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
@@ -35,8 +35,18 @@ flake.modules.nixos.misc= { pkgs, ... }: {
   #theme thingy
   xdg.portal = {
     enable = true;
+    wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
-    config.common.default = [ "gtk" ];
+    config = {
+      mango = {
+        default = lib.mkForce [ "wlr" "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+        "org.freedesktop.impl.portal.Screenshot" = "wlr";
+      };
+      common = {
+        default = [ "wlr" "gtk" ];
+      };
+    };
   };
   #app image
   programs.appimage.enable = true;

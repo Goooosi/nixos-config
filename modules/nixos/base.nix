@@ -7,11 +7,12 @@
       network 
       nixpkgs 
       misc 
-      niri 
+      wm 
       power 
       qylock
       hardware
-      noctalia-cache 
+      noctalia-cache
+      wofi-fix
     ];
   };
 }
