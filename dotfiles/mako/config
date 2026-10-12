@@ -1,0 +1,14 @@
+font=Maple Mono 11
+width=350
+border-radius=14
+border-size=2
+background-color=#1C2124FF
+text-color=#FFFFFFFF
+border-color=#414E54FF
+progress-color=over #EFCB69FF
+default-timeout=5000
+
+[urgency=high]
+border-color=#DE635DFF
+default-timeout=0
+

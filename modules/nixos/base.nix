@@ -12,7 +12,7 @@
       qylock
       hardware
       noctalia-cache
-      wofi-fix
+      fuzzel-fix
     ];
   };
 }

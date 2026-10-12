@@ -11,11 +11,18 @@
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/noctalia";
     home.file.".config/mango".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mango";
-    home.file.".config/wofi".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/wofi";
+    home.file.".config/fuzzel".source =
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fuzzel";
     home.file.".config/eww".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/eww";
     home.file.".config/mangobar".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mangobar";
+    home.file.".config/mako".source = 
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mako";
+    home.file.".config/swaylock".source = 
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swaylock";
+    home.file.".config/swayidle".source = 
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayidle";
+
   };
 }

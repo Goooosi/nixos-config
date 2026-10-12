@@ -1,0 +1,48 @@
+# /etc/nixos/dotfiles/swaylock/config
+
+# Main Layout Flags (Must stand completely alone)
+clock
+indicator
+
+# Compact Dimension Parameters (Omit x/y values so it defaults to true center)
+indicator-radius=85
+indicator-thickness=6
+font="Maple Mono"
+font-size=18
+
+# Time and Date Layout Strings
+timestr=%I:%M %p
+datestr=%b %d
+
+# Desktop Blur Effects
+screenshots
+fade-in=0.15
+effect-blur=8x6
+effect-vignette=0.3:0.6
+
+# Base Theme Colors
+color=1c2124ff
+inside-color=1c2124cc
+ring-color=efcb69ff
+line-color=1c2124ff
+text-color=efcb69ff
+separator-color=1c2124ff
+
+# Typing Feedback Colors
+key-hl-color=ffeb89ff
+bs-hl-color=de635dff
+caps-lock-key-hl-color=ffeb89ff
+caps-lock-bs-hl-color=de635dff
+
+# Verification/Checking State
+inside-ver-color=414e54cc
+line-ver-color=ffeb89ff
+ring-ver-color=ffeb89ff
+text-ver-color=ffffffff
+
+# Password Failure State
+inside-wrong-color=1c2124cc
+line-wrong-color=de635dff
+ring-wrong-color=de635dff
+text-wrong-color=ff837dff
+

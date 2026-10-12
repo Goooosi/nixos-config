@@ -14,6 +14,7 @@ flake.modules.nixos.nixpkgs = { pkgs,  inputs, ... }: {
   ];
   environment.systemPackages = with pkgs; [
     brightnessctl
+    playerctl
     gst_all_1.gstreamer
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good

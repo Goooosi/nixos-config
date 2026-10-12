@@ -1,0 +1,4 @@
+timeout 180 'mango dispatch dpms off' resume 'mango dispatch dpms on'
+timeout 300 'swaylock -f'
+before-sleep 'swaylock -f'
+

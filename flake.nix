@@ -23,7 +23,7 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mangobar.url = "github:mangowm/mangobar"; 
+    mangobar.url = "github:mangowm/mangobar";
   };
 
   outputs = inputs@{ flake-parts, import-tree, ... }:

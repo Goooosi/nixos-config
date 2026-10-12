@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.nixos.wofi-fix = { pkgs, ... }:
+  flake.modules.nixos.fuzzel-fix = { pkgs, ... }:
     let
       chooser = pkgs.writeShellScript "xdpw-chooser" ''
         cache="$XDG_RUNTIME_DIR/xdpw-chooser-last"
@@ -14,7 +14,7 @@
         fresh "$cancel" 5 && exit 0
         fresh "$cache" 15 && { ${pkgs.coreutils}/bin/cat "$cache"; exit 0; }
 
-        choice=$(printf '%s\n' "$input" | ${pkgs.wofi}/bin/wofi --show dmenu --prompt "Select what to share")
+        choice=$(printf '%s\n' "$input" | ${pkgs.fuzzel}/bin/fuzzel -d --prompt "Select what to share " --keyboard-focus=on-demand)
 
         if [ -n "$choice" ]; then
           printf '%s\n' "$choice" > "$cache"
@@ -32,3 +32,4 @@
       };
     };
 }
+

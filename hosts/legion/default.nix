@@ -15,7 +15,8 @@
   ];
   home-manager.users.zi = {
     imports = [
-      inputs.self.modules.homeManager.music 
+      inputs.self.modules.homeManager.music
+      inputs.self.modules.homeManager.no-noctalia
     ];
   };
   services.flatpak = {

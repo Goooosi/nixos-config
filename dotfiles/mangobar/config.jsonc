@@ -1,0 +1,74 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": "auto",
+  "spacing": 14,
+  "margin-top": 10,
+  "margin-left": 400,
+  "margin-right": 400,
+
+  "modules-left": [
+    "custom/applauncher",
+    "mango/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/temp",
+    "cpu",
+    "battery",
+    "tray",
+    "custom/power"
+  ],
+  "custom/temp": {
+    "exec": "/run/current-system/sw/bin/awk '{printf \"%d°C\", $1/1000}' /sys/class/hwmon/hwmon4/temp1_input",
+    "interval": 2,
+    "format": "  {}"
+  },
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "tooltip": false
+  },
+
+  "mango/workspaces": {
+    "disable-scroll": true,
+    "tooltip": false
+  },
+
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "/run/current-system/sw/bin/pkill -x fuzzel || /etc/profiles/per-user/zi/bin/fuzzel --show-actions=no --keyboard-focus=on-demand",
+    "tooltip": false
+  },
+
+  "tray": {
+    "spacing": 6,
+    "tooltip": false
+  },
+    
+  "clock": {
+    "format": "  {:L%b %d · %A} ·   {:L%I:%M %p}",
+    "tooltip": false
+  },
+  
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "/run/current-system/sw/bin/pkill -x fuzzel || sh -c 'c=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | /etc/profiles/per-user/zi/bin/fuzzel -d --prompt \"System \" --keyboard-focus=on-demand); case \"$c\" in Lock) /run/current-system/sw/bin/swaylock ;; Suspend) /run/current-system/sw/bin/swaylock -f && /run/current-system/sw/bin/systemctl suspend ;; Reboot) /run/current-system/sw/bin/systemctl reboot ;; Shutdown) /run/current-system/sw/bin/systemctl poweroff ;; esac'",
+    "tooltip": false
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {percent}%",
+    "format-charging": " {percent}%",
+    "format-plugged": " {percent}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "  {percent}%",
+    "format-icons": [ " ", " ", " " ]
+  }
+}
+
