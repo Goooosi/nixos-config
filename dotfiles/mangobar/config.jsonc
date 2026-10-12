@@ -39,7 +39,7 @@
 
   "custom/applauncher": {
     "format": "〇",
-    "on-click": "/run/current-system/sw/bin/pkill -x fuzzel || /etc/profiles/per-user/zi/bin/fuzzel --show-actions=no --keyboard-focus=on-demand",
+    "on-click": "sh -c 'pkill fuzzel||(fuzzel --no-exit-on-keyboard-focus-loss&slurp -p -b 00000000 >/dev/null 2>&1&wait -n;pkill slurp;pkill fuzzel)'",
     "tooltip": false
   },
 
@@ -52,12 +52,12 @@
     "format": "  {:L%b %d · %A} ·   {:L%I:%M %p}",
     "tooltip": false
   },
-  
   "custom/power": {
     "format": "⏻",
-    "on-click": "/run/current-system/sw/bin/pkill -x fuzzel || sh -c 'c=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | /etc/profiles/per-user/zi/bin/fuzzel -d --prompt \"System \" --keyboard-focus=on-demand); case \"$c\" in Lock) /run/current-system/sw/bin/swaylock ;; Suspend) /run/current-system/sw/bin/swaylock -f && /run/current-system/sw/bin/systemctl suspend ;; Reboot) /run/current-system/sw/bin/systemctl reboot ;; Shutdown) /run/current-system/sw/bin/systemctl poweroff ;; esac'",
+    "on-click": "sh -c 'choice=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | fuzzel --dmenu --prompt=\"System ❯ \"); case \"$choice\" in Lock) pkill -SIGUSR1 swayidle ;; Suspend) systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'",
     "tooltip": false
   },
+
   "battery": {
     "states": {
       "warning": 30,
