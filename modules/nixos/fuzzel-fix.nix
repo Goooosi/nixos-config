@@ -13,8 +13,22 @@
 
         fresh "$cancel" 5 && exit 0
         fresh "$cache" 15 && { ${pkgs.coreutils}/bin/cat "$cache"; exit 0; }
+        
+        ${pkgs.fuzzel}/bin/fuzzel -d --prompt "Select what to share " --keyboard-focus=on-demand --no-exit-on-keyboard-focus-loss < <(printf '%s\n' "$input") > "$XDG_RUNTIME_DIR/xdpw-fuzzel-choice" &
+        FUZZEL_PID=$!
 
-        choice=$(printf '%s\n' "$input" | ${pkgs.fuzzel}/bin/fuzzel -d --prompt "Select what to share " --keyboard-focus=on-demand)
+        ${pkgs.slurp}/bin/slurp -p -b 00000000 >/dev/null 2>&1 &
+        SLURP_PID=$!
+
+        wait -n
+
+        kill $SLURP_PID 2>/dev/null
+        kill $FUZZEL_PID 2>/dev/null
+        wait $FUZZEL_PID 2>/dev/null
+
+        choice=$(cat "$XDG_RUNTIME_DIR/xdpw-fuzzel-choice" 2>/dev/null)
+        rm -f "$XDG_RUNTIME_DIR/xdpw-fuzzel-choice"
+        # -------------------------------------
 
         if [ -n "$choice" ]; then
           printf '%s\n' "$choice" > "$cache"

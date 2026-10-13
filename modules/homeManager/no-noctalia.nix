@@ -14,6 +14,7 @@
       slurp
       cliphist
       wayland-pipewire-idle-inhibit
+      swappy
     ];
     services.mangobar = {
       enable = true;

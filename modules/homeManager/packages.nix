@@ -19,7 +19,10 @@
       nautilus
       postman
       proton-vpn
-      python314
+      (python314.withPackages (ps: with ps; [
+        tkinter
+        pillow
+      ]))
       resources
       usbimager
       vesktop 

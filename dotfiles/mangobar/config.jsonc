@@ -15,16 +15,20 @@
     "clock"
   ],
   "modules-right": [
-    "custom/temp",
-    "cpu",
+    "custom/cpu-combined",
     "battery",
     "tray",
     "custom/power"
   ],
-  "custom/temp": {
-    "exec": "/run/current-system/sw/bin/awk '{printf \"%d°C\", $1/1000}' /sys/class/hwmon/hwmon4/temp1_input",
+  "custom/cpu-combined": {
+    "exec": "/home/zi/.config/mangobar/cpu-stats.sh",
     "interval": 2,
-    "format": "  {}"
+    "format": "{}"
+  },
+  "custom/temp": {
+    "exec": "/run/current-system/sw/bin/bash -c 'for h in /sys/class/hwmon/hwmon*; do if [ -f \"$h/name\" ] && [ \"$(cat \"$h/name\")\" = \"k10temp\" ]; then awk \"{printf \\\"%.0f°C\\\", \\$1/1000}\" \"$h/temp1_input\"; exit; fi; done; echo \"N/A\"'",
+    "interval": 2,
+    "format": " {}"
   },
   "cpu": {
     "interval": 2,
@@ -55,7 +59,7 @@
   "custom/power": {
     "format": "⏻",
     "on-click": "sh -c 'choice=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | fuzzel --dmenu --prompt=\"System ❯ \"); case \"$choice\" in Lock) pkill -SIGUSR1 swayidle ;; Suspend) systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "battery": {
@@ -66,9 +70,8 @@
     "format": "{icon} {percent}%",
     "format-charging": " {percent}%",
     "format-plugged": " {percent}%",
-    "format-alt": "{icon} {time}",
-    "format-full": "  {percent}%",
+    "format-full": " {percent}%",
     "format-icons": [ " ", " ", " " ]
-  }
-}
+  },
 
+}

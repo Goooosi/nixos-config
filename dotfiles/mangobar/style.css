@@ -11,9 +11,8 @@ window#waybar {
   border: none;
 }
 
-.modules-left,
 .modules-center,
-.modules-right, {
+.modules-right {
   background: #1C2124;
   border: 2px solid #414E54;
   border-radius: 12px;
@@ -21,11 +20,37 @@ window#waybar {
   margin: 0;
 }
 
+.modules-left {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-applauncher {
+  background: #1C2124;
+  border: 2px solid #414E54;
+  border-radius: 12px;
+  color: #EFCB69;
+  padding: 4px 10px;
+  margin-right: 8px;
+}
+
+#custom-applauncher:hover {
+  background: #EFCB69;
+  color: #1C2124;
+}
+
 #workspaces,
-#tags,
-#custom-applauncher,
+#tags {
+  background: #DE635D;
+  border: 2px solid #DE635D;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 0;
+}
+
 #network,
-#battery,
 #pulseaudio,
 #tray,
 #clock {
@@ -36,18 +61,32 @@ window#waybar {
   margin: 0;
 }
 
+#custom-cpu-combined,
+#battery,
+#custom-power {
+  color: #EFCB69;
+}
+
+#custom-cpu-combined,
+#battery,
+#tray,
+#custom-power {
+  padding: 4px 12px;
+}
+
 #workspaces button,
 #tags button {
-  background: transparent;
-  color: #52626A;
+  background: rgba(28, 33, 36, 0.4);
+  color: #FFFFFF;
   padding: 0 6px;
   border-radius: 6px;
+  margin: 0 2px;
 }
 
 #workspaces button:hover,
 #tags button:hover {
-  background: #414E54;
-  color: #FFEB89;
+  background: #FFFFFF;
+  color: #1C2124;
 }
 
 #workspaces button.visible,
@@ -64,19 +103,8 @@ window#waybar {
 
 #workspaces button.urgent,
 #tags button.urgent {
-  background: #DE635D;
-  color: #FFFFFF;
-}
-
-#custom-applauncher {
-  color: #EFCB69;
-  padding: 4px 10px;
-}
-
-#custom-applauncher:hover {
-  background: #EFCB69;
-  color: #1C2124;
-  border-radius: 8px;
+  background: #1C2124;
+  color: #DE635D;
 }
 
 #clock {
@@ -88,15 +116,13 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-  color: #52626A;
+  color: #DE635D;
 }
 
-/* Network */
 #network.disconnected {
   color: #DE635D;
 }
 
-/* Battery */
 #battery.warning:not(.charging) {
   color: #EFCB69;
 }
@@ -109,20 +135,10 @@ window#waybar {
 #battery.plugged {
   color: #FFEB89;
 }
-"custom/power": {
-  "format": "⏻",
-  "on-click": "pkill -x fuzzel || sh -c 'c=$(printf \"Shutdown\\nReboot\\nSuspend\\nLogout\" | fuzzel -d --prompt \"Power \" --keyboard-focus=on-demand); case \"$c\" in Shutdown) systemctl poweroff;; Reboot) systemctl reboot;; Suspend) systemctl suspend;; Logout) mango dispatch exit;; esac'",
-  "tooltip": false
-}
+
 #custom-power:hover {
   background: #DE635D;
   color: #1C2124;
   border-radius: 8px;
 }
-#temperature,
-#cpu,
-#battery,
-#tray,
-#custom-power {
-  padding: 4px 12px;
-}
+

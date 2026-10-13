@@ -54,6 +54,10 @@
         gst_all_1.gst-libav
         umbreonTheme 
       ];
+      environment.sessionVariables = {
+        XCURSOR_THEME = "Bibata-Modern-Ice";
+        XCURSOR_SIZE = "24";
+      };
     };
 }
 
