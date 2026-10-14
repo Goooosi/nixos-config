@@ -32,6 +32,7 @@ flake.modules.nixos.misc= { pkgs, lib, ... }: {
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
   security.pam.services.swaylock = {};
+  programs.dconf.enable = true;
   services.gvfs.enable = true;
   #theme thingy
   xdg.portal = {
