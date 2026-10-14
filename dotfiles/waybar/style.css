@@ -1,0 +1,144 @@
+* {
+  font-family: "Maple Mono NF", "Symbols Nerd Font", sans-serif;
+  font-size: 13px;
+  border: none;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.modules-center,
+.modules-right {
+  background: #1C2124;
+  border: 2px solid #414E54;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+.modules-left {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#custom-applauncher {
+  background: #1C2124;
+  border: 2px solid #414E54;
+  border-radius: 12px;
+  color: #EFCB69;
+  padding: 4px 10px;
+  margin-right: 8px;
+}
+
+#custom-applauncher:hover {
+  background: #EFCB69;
+  color: #1C2124;
+}
+
+#workspaces {
+  background: #DE635D;
+  border: 2px solid #DE635D;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 0;
+}
+
+#tray,
+#clock {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  padding: 4px 6px;
+  margin: 0;
+}
+
+#temperature,
+#cpu,
+#battery,
+#custom-power {
+  color: #EFCB69;
+}
+
+#temperature,
+#cpu,
+#battery,
+#tray,
+#custom-power {
+  padding: 4px 12px;
+}
+
+/* Container holding all workspace capsules */
+#workspaces {
+  background: #1C2124;
+  border: 2px solid #414E54;
+  border-radius: 12px;
+  padding: 2px 6px;
+  margin: 0;
+}
+
+/* Unfocused workspaces: red */
+#workspaces button {
+  background: #DE635D;
+  background-image: none;
+  color: #1C2124;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: 8px;
+  padding: 0 8px;
+  margin: 0 2px;
+}
+
+#workspaces button:hover {
+  background: #FF837D;
+  background-image: none;
+  color: #1C2124;
+  box-shadow: none;
+}
+
+/* Current workspace: yellow */
+#workspaces button.active {
+  background: #EFCB69;
+  background-image: none;
+  color: #1C2124;
+  font-weight: bold;
+}
+
+/* Workspace with an urgent window */
+#workspaces button.urgent {
+  background: #FFFFFF;
+  color: #DE635D;
+}
+
+#clock {
+  color: #EFCB69;
+}
+
+#temperature.critical {
+  color: #DE635D;
+}
+
+#battery.warning:not(.charging) {
+  color: #EFCB69;
+}
+
+#battery.critical:not(.charging) {
+  color: #DE635D;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #FFEB89;
+}
+
+#custom-power:hover {
+  background: #DE635D;
+  color: #1C2124;
+  border-radius: 8px;
+}

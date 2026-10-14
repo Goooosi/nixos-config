@@ -1,0 +1,92 @@
+{
+  "layer": "top",
+  "position": "top",
+  "spacing": 14,
+  "margin-top": 10,
+  "margin-left": 400,
+  "margin-right": 400,
+
+"modules-left": [
+  "custom/applauncher",
+  "ext/workspaces"
+],
+
+  "ext/workspaces": {
+    "format": "{icon}",
+    "ignore-hidden": true,
+    "on-click": "activate",
+    "sort-by-id": true,
+    "disable-scroll": true
+  },  
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "group/stats",
+    "battery",
+    "tray",
+    "custom/power"
+  ],
+
+  "mango/workspaces": {
+    "hide-empty": false,
+    "on-click": "activate",
+    "on-click-right": "toggle",
+    "disable-scroll": true,
+    "tooltip": false
+  },
+
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "sh -c 'pkill fuzzel||(fuzzel --no-exit-on-keyboard-focus-loss&slurp -p -b 00000000 >/dev/null 2>&1&wait -n;pkill slurp;pkill fuzzel)'",
+    "tooltip": false
+  },
+
+  "group/stats": {
+    "orientation": "inherit",
+    "modules": ["temperature", "cpu"]
+  },
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+    "critical-threshold": 85,
+    "format": "\uf2c9 {temperatureC}°C",
+    "format-critical": "\uf2c9 {temperatureC}°C",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": "\uf2db {usage}%",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": "\uf073 {0:L%b %d · %A} · \uf017 {0:L%I:%M %p}",
+    "tooltip": false
+  },
+
+  "tray": {
+    "spacing": 6,
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "sh -c 'choice=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | fuzzel --dmenu --prompt=\"System ❯ \"); case \"$choice\" in Lock) pkill -SIGUSR1 swayidle ;; Suspend) systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'",
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "\uf0e7 {capacity}%",
+    "format-plugged": "\uf1e6 {capacity}%",
+    "format-full": "\uf240 {capacity}%",
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    "tooltip": false
+  }
+}
