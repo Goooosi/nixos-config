@@ -14,6 +14,7 @@
     inputs.self.modules.homeManager.zsh
     inputs.self.modules.homeManager.packages
     inputs.self.modules.homeManager.neovim
+    inputs.self.modules.homeManager.no-noctalia
   ];
 }
 

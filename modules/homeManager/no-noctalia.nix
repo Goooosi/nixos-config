@@ -1,9 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.homeManager.no-noctalia = { pkgs, ... }: {
-    imports = [ 
-      inputs.mangobar.homeManagerModules.default
-    ];
+    programs.waybar.enable = true;
     home.packages  = with pkgs; [
       fuzzel
       eww
@@ -16,9 +14,5 @@
       wayland-pipewire-idle-inhibit
       swappy
     ];
-    services.mangobar = {
-      enable = true;
-      systemdTarget = "mango.target";
-    };
   };
 }

@@ -15,14 +15,14 @@
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fuzzel";
     home.file.".config/eww".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/eww";
-    home.file.".config/mangobar".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mangobar";
     home.file.".config/mako".source = 
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mako";
     home.file.".config/swaylock".source = 
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swaylock";
     home.file.".config/swayidle".source = 
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayidle";
+    home.file.".config/waybar".source =
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/waybar";
 
   };
 }
