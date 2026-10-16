@@ -23,6 +23,10 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waybar = {
+      url="github:Alexays/Waybar/4e207a0cb51a9eb89b4245d90245721f5e39bf06/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ flake-parts, import-tree, ... }:

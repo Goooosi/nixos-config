@@ -8,16 +8,9 @@
 
 "modules-left": [
   "custom/applauncher",
-  "ext/workspaces"
+  "mango/workspaces"
 ],
 
-  "ext/workspaces": {
-    "format": "{icon}",
-    "ignore-hidden": true,
-    "on-click": "activate",
-    "sort-by-id": true,
-    "disable-scroll": true
-  },  
   "modules-center": [
     "clock"
   ],
@@ -27,14 +20,6 @@
     "tray",
     "custom/power"
   ],
-
-  "mango/workspaces": {
-    "hide-empty": false,
-    "on-click": "activate",
-    "on-click-right": "toggle",
-    "disable-scroll": true,
-    "tooltip": false
-  },
 
   "custom/applauncher": {
     "format": "〇",
@@ -73,7 +58,7 @@
 
   "custom/power": {
     "format": "⏻",
-    "on-click": "sh -c 'choice=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | fuzzel --dmenu --prompt=\"System ❯ \"); case \"$choice\" in Lock) pkill -SIGUSR1 swayidle ;; Suspend) systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'",
+    "on-click": "pkill fuzzel || sh -c 'slurp -p -b \"#00000000\" >/dev/null 2>&1 & sp=$!; (while kill -0 $sp 2>/dev/null; do sleep 0.1; done; pkill fuzzel) & choice=$(printf \"Lock\\nSuspend\\nReboot\\nShutdown\" | fuzzel --dmenu --no-exit-on-keyboard-focus-loss --prompt=\"System ❯ \"); kill $sp 2>/dev/null; case \"$choice\" in Lock) pkill -SIGUSR1 swayidle ;; Suspend) systemctl suspend ;; Reboot) systemctl reboot ;; Shutdown) systemctl poweroff ;; esac'",
     "tooltip": false
   },
 
