@@ -8,7 +8,7 @@
     inputs.self.modules.nixos.audio
     inputs.self.modules.nixos.game
     inputs.self.modules.nixos.nvidia
-    # broken on kernel version 7.2.11
+    # broken on kernel version 7.2.11 and broken on lts????
     inputs.self.modules.nixos.legion-fan-curve
     (inputs.self + "/users/users.nix")
     inputs.nix-flatpak.nixosModules.nix-flatpak

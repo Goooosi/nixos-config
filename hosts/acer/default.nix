@@ -3,7 +3,8 @@
   imports = [
     ./hardware-configuration.nix
     inputs.self.modules.nixos.base
-    inputs.self.modules.nixos.acer-battery
+    # also broken on 7.2.11 and on lts for some reason
+    # inputs.self.modules.nixos.acer-battery
     (inputs.self + "/users/users.nix")
   ];
 
