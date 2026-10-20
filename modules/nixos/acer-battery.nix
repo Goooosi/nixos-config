@@ -1,35 +1,19 @@
 { lib, ... }:
 {
-  flake.modules.nixos.acer-battery = { config, lib, pkgs, ... }: 
+  flake.modules.nixos.acer-battery = { config, lib, pkgs, ... }:
   let
     cfg = config.services.acer-battery;
-    
-    acer-wmi-battery = config.boot.kernelPackages.callPackage ({ stdenv, fetchFromGitHub, kernel }: stdenv.mkDerivation rec {
-      name = "acer-wmi-battery-${version}-${kernel.version}";
-      version = "unstable-2026";
+    kernel = config.boot.kernelPackages.kernel;
 
-      src = fetchFromGitHub {
-        owner = "frederik-h";
-        repo = "acer-wmi-battery";
-        rev = "main";
-        hash = "sha256-CyKRpE3cnhEIFHc4Hal2PQUW7cd5k8+55S4QdSqGvNI=";
-      };
+    acer-wmi-battery = config.boot.kernelPackages.acer-wmi-battery.overrideAttrs (old: {
 
-      hardeningDisable = [ "pic" "format" ];
-      nativeBuildInputs = kernel.moduleBuildDependencies; 
-      buildPhase = ''
-        runHook preBuild
-        make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build M=$(pwd) modules
-        runHook postBuild
+      preInstall = (old.preInstall or "") + ''
+        ${lib.getExe pkgs.kmodigest} acer-wmi-battery.ko
       '';
-
-      installPhase = ''
-        runHook preInstall
-        mkdir -p $out/lib/modules/${kernel.modDirVersion}/misc
-        cp acer-wmi-battery.ko $out/lib/modules/${kernel.modDirVersion}/misc/
-        runHook postInstall
+      postInstall = (old.postInstall or "") + ''
+        install -Dm444 -t $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/platform/x86 acer-wmi-battery.ko.cer
       '';
-    }) {};
+    });
   in {
     options.services.acer-battery = {
       enable = lib.mkEnableOption "Acer 80% Battery Charge Limit Support";
@@ -44,4 +28,3 @@
     };
   };
 }
-
