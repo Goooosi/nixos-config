@@ -29,6 +29,7 @@
       wvkbd
       localsend
       lazygit
+      librewolf
     ];
   };
 }
