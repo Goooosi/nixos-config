@@ -8,7 +8,7 @@
     (inputs.self + "/users/users.nix")
   ];
 
-  # services.acer-battery.enable = true;
+  services.acer-battery.enable = true;
   networking.hostName="acer";
   system.stateVersion = "26.05";
 }
