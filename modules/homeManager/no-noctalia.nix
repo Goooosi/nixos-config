@@ -11,8 +11,9 @@
       });
     };
     home.packages  = with pkgs; [
+      inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
       fuzzel
-      eww
+      swayosd
       mako
       swayidle
       swaylock-effects

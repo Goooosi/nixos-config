@@ -1,23 +1,28 @@
 [backdrop]
-blur_intensity = 0.19999999552965164
+blur_intensity = 0.0
 enabled = true
 tint_intensity = 0.24999999441206455
 
 [bar.default]
-background_opacity = 0.0
-capsule = true
+background_opacity = 0.74999998323619366
+capsule = false
 capsule_border = "primary"
 capsule_fill = "surface"
 capsule_foreground = "on_surface"
-center = [ "cat", "clock" ]
+center = [ "workspaces" ]
 color = "primary"
-end = [ "tray", "temp", "notifications", "volume", "battery", "session" ]
+end = [ "tray", "notifications", "session", "launcher" ]
 font_family = "Maple Mono"
 icon_color = "error"
 layer = "top"
 margin_edge = 3
-margin_ends = 0
+margin_ends = 4
+margin_opposite_edge = 2
+position = "left"
+scale = 1.2000000104308128
 smart_auto_hide = false
+start = [ "cat", "clock", "temp", "battery", "volume" ]
+widget_spacing = 15
 
 [control_center]
 hidden_tabs = [ "monitor", "power", "notifications", "screen-time" ]
@@ -60,7 +65,7 @@ blur_intensity = 0.99999997764825821
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -70,11 +75,11 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 720.0
-    cx = 640.6917724609375
-    cy = 639.95111083984375
+    cx = 654.88671875
+    cy = 727.18621826171875
     output = "eDP-1"
-    placement_height = 939.0
-    placement_width = 1670.0
+    placement_height = 1067.0
+    placement_width = 1707.0
     rotation = 0.0
     type = "login_box"
 
@@ -94,8 +99,65 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1113.652099609375
+    cy = 1153.73486328125
+    output = "eDP-2"
+    placement_height = 1391.0
+    placement_width = 2226.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 701.0
+    cy = 1389.689208984375
+    output = "winit"
+    placement_height = 1580.0
+    placement_width = 1402.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
 [notification]
 background_opacity = 0.96999997831881046
+
+[plugin_settings."noctalia/mpvpaper"]
+video_directory = "/etc/nixos/assets"
 
 [plugins]
 enabled = [ "dotnetrob/cat" ]
@@ -107,6 +169,13 @@ font_family = "Maple Mono"
     [shell.greeter_sync]
     auto_sync = true
 
+    [shell.launcher]
+    category_icons_only = true
+    compact = true
+    layout = "simple"
+    show_session_button = false
+    show_settings_button = false
+
     [shell.panel]
     control_center_position = "center"
     session_placement = "floating"
@@ -114,7 +183,7 @@ font_family = "Maple Mono"
     transparency_mode = "glass"
 
     [shell.screen_corners]
-    enabled = true
+    enabled = false
 
     [shell.screenshot]
     directory = "/home/zi/Pictures/Screenshots"
@@ -155,22 +224,30 @@ font_family = "Maple Mono"
     variant = "destructive"
 
 [theme]
-community_palette = "Rose Pine Moon"
+community_palette = "Peche"
 custom_palette = "umbreon"
+mode = "dark"
 pure_black_dark = true
-source = "custom"
+source = "wallpaper"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    enable_builtin_templates = false
 
 [wallpaper]
 directory = "/etc/nixos/assets"
 
     [wallpaper.default]
-    path = "/etc/nixos/assets/wall9.jpg"
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.last]
-    path = "/etc/nixos/assets/wall9.jpg"
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/etc/nixos/assets/wall9.jpg"
+
+    [wallpaper.monitors.eDP-2]
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
 [weather]
 unit = "imperial"
@@ -197,12 +274,13 @@ type = "dotnetrob/cat:cat"
 
 [widget.clock]
 format = "{:%-I:%M %p %a, %b %d}"
+vertical_format = "{:%m %d} - {:%I %M}"
 
 [widget.control-center]
 custom_image_colorize = true
 
 [widget.launcher]
-capsule = true
+capsule = false
 custom_image = "/etc/nixos/assets/Nix_snowflake.svg.webp"
 custom_image_colorize = true
 glyph = "accessible"
@@ -213,8 +291,15 @@ capsule_radius = "auto"
 hide_when_no_media = true
 title_scroll = "on_hover"
 
+[widget.temp]
+show_value = false
+stat = "cpu_usage"
+
+[widget.volume]
+show_label = false
+
 [widget.workspaces]
-capsule = true
+capsule = false
 empty_color = "error"
 occupied_color = "error"
-show_labels = false
+show_labels = true

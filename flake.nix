@@ -11,14 +11,10 @@
       url = "github:noctalia-dev/noctalia/cachix";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
-    
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     mangowm = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +23,10 @@
       url="github:Alexays/Waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wayfreeze.url = "github:jappie3/wayfreeze";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
   };
 
   outputs = inputs@{ flake-parts, import-tree, ... }:

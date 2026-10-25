@@ -25,6 +25,7 @@
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/waybar";
     home.file.".config/fastfetch".source =
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fastfetch";
-
+    home.file.".config/swayosd".source = 
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayosd";
   };
 }

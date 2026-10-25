@@ -206,6 +206,22 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1787360063,
+        "narHash": "sha256-dt4WdcvsA8/RCe+VZZwqU0X+XMM3wBbGCWA0/sFWzGo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2c423e03bbafcff28bfadc6781a4a8257f205cb5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -235,7 +251,8 @@
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
         "spicetify-nix": "spicetify-nix",
-        "waybar": "waybar"
+        "waybar": "waybar",
+        "wayfreeze": "wayfreeze"
       }
     },
     "scenefx": {
@@ -312,6 +329,21 @@
         "type": "github"
       }
     },
+    "systems_3": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "waybar": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -330,6 +362,25 @@
       "original": {
         "owner": "Alexays",
         "repo": "Waybar",
+        "type": "github"
+      }
+    },
+    "wayfreeze": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1787491043,
+        "narHash": "sha256-CCtf2P3NxbUHiky/ngrojGbcbALonIIwwFVj61JEG6c=",
+        "owner": "jappie3",
+        "repo": "wayfreeze",
+        "rev": "59ac913ebb71920992c52dc1002535b733994397",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jappie3",
+        "repo": "wayfreeze",
         "type": "github"
       }
     }

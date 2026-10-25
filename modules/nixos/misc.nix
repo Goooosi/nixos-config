@@ -51,6 +51,13 @@ flake.modules.nixos.misc= { pkgs, lib, ... }: {
       };
     };
   };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
   #app image
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
