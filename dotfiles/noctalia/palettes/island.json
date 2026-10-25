@@ -1,0 +1,70 @@
+{
+  "dark": {
+    "mPrimary": "#ee935c",
+    "mOnPrimary": "#303e58",
+    "mSecondary": "#5b8198",
+    "mOnSecondary": "#fef4b9",
+    "mTertiary": "#fef4b9",
+    "mOnTertiary": "#303e58",
+    "mError": "#ee935c",
+    "mOnError": "#303e58",
+    "mSurface": "#303e58",
+    "mOnSurface": "#fef4b9",
+    "mSurfaceVariant": "#445540",
+    "mOnSurfaceVariant": "#fef4b9",
+    "mOutline": "#5b8198",
+    "mShadow": "#303e58",
+    "mHover": "#5b8198",
+    "mOnHover": "#fef4b9",
+    "terminal": {
+      "foreground": "#fef4b9",
+      "background": "#303e58",
+      "selectionFg": "#303e58",
+      "selectionBg": "#ee935c",
+      "cursorText": "#303e58",
+      "cursor": "#ee935c",
+      "normal": {
+        "black": "#445540", "red": "#ee935c", "green": "#5b8198", "yellow": "#fef4b9",
+        "blue": "#5b8198", "magenta": "#ee935c", "cyan": "#5b8198", "white": "#fef4b9"
+      },
+      "bright": {
+        "black": "#5b8198", "red": "#ee935c", "green": "#fef4b9", "yellow": "#fef4b9",
+        "blue": "#5b8198", "magenta": "#ee935c", "cyan": "#fef4b9", "white": "#fef4b9"
+      }
+    }
+  },
+  "light": {
+    "mPrimary": "#fef4b9",
+    "mOnPrimary": "#303e58",
+    "mSecondary": "#ee935c",
+    "mOnSecondary": "#303e58",
+    "mTertiary": "#445540",
+    "mOnTertiary": "#fef4b9",
+    "mError": "#ee935c",
+    "mOnError": "#303e58",
+    "mSurface": "#5b8198",
+    "mOnSurface": "#303e58",
+    "mSurfaceVariant": "#445540",
+    "mOnSurfaceVariant": "#fef4b9",
+    "mOutline": "#303e58",
+    "mShadow": "#303e58",
+    "mHover": "#ee935c",
+    "mOnHover": "#303e58",
+    "terminal": {
+      "foreground": "#303e58",
+      "background": "#5b8198",
+      "selectionFg": "#303e58",
+      "selectionBg": "#fef4b9",
+      "cursorText": "#303e58",
+      "cursor": "#ee935c",
+      "normal": {
+        "black": "#303e58", "red": "#ee935c", "green": "#445540", "yellow": "#fef4b9",
+        "blue": "#303e58", "magenta": "#ee935c", "cyan": "#445540", "white": "#fef4b9"
+      },
+      "bright": {
+        "black": "#445540", "red": "#ee935c", "green": "#fef4b9", "yellow": "#fef4b9",
+        "blue": "#303e58", "magenta": "#ee935c", "cyan": "#fef4b9", "white": "#fef4b9"
+      }
+    }
+  }
+}

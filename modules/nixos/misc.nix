@@ -31,6 +31,7 @@ flake.modules.nixos.misc= { pkgs, lib, ... }: {
   # Gnome keyring and nautilus
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.sddm.enableGnomeKeyring = true;
+  security.polkit.enable = true;
   security.pam.services.swaylock = {};
   programs.dconf.enable = true;
   services.gvfs.enable = true;

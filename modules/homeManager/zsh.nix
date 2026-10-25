@@ -22,7 +22,7 @@
         export EDITOR=nvim
         export VISUAL=nvim
 	      export ZLE_RPROMPT_INDENT=0
-        fastfetch --logo-padding-top 4 --logo-padding-left 0 --logo-padding-right 1 --file-raw /etc/nixos/assets/umbreon_sprite
+        fastfetch 
         export LANG=en_US.UTF-8
 	      export LC_ALL=en_US.UTF-8
       '';

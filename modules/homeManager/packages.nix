@@ -29,7 +29,8 @@
       wvkbd
       localsend
       lazygit
-      
+      librewolf
+      (pkgs.callPackage ../../pkgs/sony-headphones.nix {})    
     ];
   };
 }
