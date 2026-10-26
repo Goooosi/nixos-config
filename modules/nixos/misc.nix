@@ -51,13 +51,13 @@ flake.modules.nixos.misc= { pkgs, lib, ... }: {
       };
     };
   };
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
+  #gtk = {
+    #enable = true;
+    #theme = {
+      #name = "Adwaita-dark";
+      #package = pkgs.gnome-themes-extra;
+    #};
+  #};
   #app image
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
@@ -79,6 +79,9 @@ flake.modules.nixos.misc= { pkgs, lib, ... }: {
     libXrandr
     libXext
   ];
-
+  programs.gpu-screen-recorder = {
+      enable = true;
+      ui.enable = true;
+    };
   };
 }

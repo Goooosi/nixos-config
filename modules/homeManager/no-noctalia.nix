@@ -22,6 +22,9 @@
       cliphist
       wayland-pipewire-idle-inhibit
       swappy
+      impala
+      wiremix
+      pamixer
     ];
   };
 }

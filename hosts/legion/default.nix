@@ -29,6 +29,7 @@
     packages = [
       "org.vinegarhq.Sober"
       "org.jellyfin.JellyfinDesktop"
+      "org.kde.kcolorchooser"
     ];
 
     overrides = {

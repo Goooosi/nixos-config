@@ -12,3 +12,6 @@ default-timeout=5000
 border-color=#DE635DFF
 default-timeout=0
 
+[mode=do-not-disturb]
+invisible=1
+
