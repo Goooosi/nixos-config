@@ -1,4 +1,8 @@
-timeout 180 'mango dispatch dpms off' resume 'mango dispatch dpms on'
-timeout 300 'swaylock -f'
-before-sleep 'swaylock -f'
+timeout 180 "for m in \$(mmsg get all-monitors); do mmsg dispatch sleep_monitor \"\$m\"; done" resume "for m in \$(mmsg get all-monitors); do mmsg dispatch wakeup_monitor \"\$m\"; done"
+
+timeout 300 "swaylock -f"
+
+timeout 600 "systemctl suspend"
+
+before-sleep "swaylock -f"
 
