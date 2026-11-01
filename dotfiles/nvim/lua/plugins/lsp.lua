@@ -2,7 +2,9 @@ return {
   -- Native LSP Hook Management Layer
   {
     "hrsh7th/cmp-nvim-lsp",
+    dependencies = { "neovim/nvim-lspconfig" },
     config = function()
+      -- Hook up shortcuts on LSP attach
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
@@ -16,8 +18,7 @@ return {
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      -- Target language setups
-      vim.lsp.config("ts_ls", { cmd = { "typescript-language-server", "--stdio" }, capabilities = capabilities })
+      vim.lsp.config("ts_ls", { capabilities = capabilities })
       vim.lsp.enable("ts_ls")
 
       vim.lsp.config("pyright", { capabilities = capabilities })

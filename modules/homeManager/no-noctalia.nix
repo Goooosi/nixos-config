@@ -31,6 +31,7 @@
       impala
       wiremix
       pamixer
+      bluetui
     ];
   };
 }

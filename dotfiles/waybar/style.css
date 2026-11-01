@@ -1,12 +1,10 @@
-@import "./waybar.css";
-
+@define-color foreground #9d9488;
+@define-color background #e5e189;
 
 * {
-  /* background-color: @background; */
   color: @foreground;
-
   border: none;
-  border-radius:0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
   font-family: 'CaskaydiaMono Nerd Font Propo';
   font-size: 12px;
 }
@@ -24,7 +22,6 @@ window#waybar {
   transition-duration: .5s;
 }
 
-
 .modules-left {
   margin-left: 8px;
 }
@@ -40,19 +37,30 @@ window#waybar {
   padding: 0 20px;
 }
 
-
 #workspaces button {
   all: initial;
   padding: 0 6px;
   margin: 0 1.5px;
   min-width: 9px;
+  color: @foreground;
 }
 
 #workspaces button.empty {
   opacity: 0.5;
 }
 
-#mango-window,
+#workspaces button.active,
+#workspaces button.focused {
+  opacity: 1;
+  color: @background;
+  background-color: @foreground;
+  border-radius: 6px;
+}
+
+#workspaces button.urgent {
+  color: #eb7087;
+}
+
 #window,
 #tray,
 #cpu,
@@ -64,13 +72,9 @@ window#waybar {
 #clock,
 #pulseaudio,
 #idle_inhibitor,
-#custom-nixos,
 #backlight,
-#custom-screenrecording-indicator,
-#custom-idle-indicator,
-#custom-updatespacman,
-#custom-screenrecording-indicator,
-#custom-update {
+#layout,
+#custom-launcher {
   min-width: 12px;
   margin: 1px 4px 1px 4px;
   padding-left: 1px;
@@ -85,69 +89,21 @@ window#waybar {
   margin-left: 0px;
 }
 
-tooltip {
-  padding: 0.5px;
-}
-
-
 .hidden {
   opacity: 0;
 }
 
-#custom-voxtype {
-  min-width: 12px;
-  margin: 0 0 0 2.5px;
-}
-
-#custom-voxtype.recording {
-  color: #a55555;
-}
-
-#custom-idle-indicator,
-#custom-notification-silencing-indicator {
-  min-width: 12px;
-  margin-left: 2px;
-  margin-right: 2px;
-  font-size: 12px;
-  padding-bottom: 0px;
-}
-
-#custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
-  color: #a55555;
-}
-
-#custom-screenrecording-indicator {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: transparent;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #eb7087;
-  animation-name: blink-recording;
-  animation-duration: 0.5s;
-}
-
-@keyframes blink-recording {
-    to {
-        color: @background;
-    }
-}
-
-
 tooltip {
- padding: 4px;
- background: @background;
- font-size: 10px;
- border: 2px solid alpha(@foreground, 0.64);
- border-radius: 8px;
-}
-tooltip label {
-    color: @foreground;
+  padding: 4px;
+  background: @background;
+  font-size: 10px;
+  border: 2px solid alpha(@foreground, 0.64);
+  border-radius: 8px;
 }
 
+tooltip label {
+  color: @foreground;
+}
 
 #battery.warning {
   color: #c95d0f;
@@ -171,17 +127,16 @@ tooltip label {
 }
 
 #mpris {
-color: alpha(@foreground, 0.95);
-animation: repeat;
-	animation-name: blink3;
-	animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: alpha(@foreground, 0.95);
+  animation-name: blink3;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes blink3 {
-    to {
-        color: #4a4a4a;
-    }
+  to {
+    color: #4a4a4a;
+  }
 }
