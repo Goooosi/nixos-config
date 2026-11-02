@@ -16,6 +16,7 @@
           ];
         });
     };
+    programs.rofi.enable = true;
     home.packages  = with pkgs; [
       inputs.wayfreeze.packages.${pkgs.system}.wayfreeze
       fuzzel

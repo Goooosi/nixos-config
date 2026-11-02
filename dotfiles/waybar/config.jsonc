@@ -63,7 +63,7 @@
       "^.*cmatrix( .*|$)": " 󰘨 MATRIX $1 ",
       "(.*) - Spotify": "  $1 ",
       "(.*) - com.mitchellh.ghostty": " 󰊠 $1 ",
-      "(.*) - kitty": " 󰄛  $1 ",
+      "(.*) - kitty": " 󰄛 $1 ",
       "(.*) - BeeperTexts": " 󰻞  $1 ",
       "(.*Discord)...(.*).. (.*)": "  $2 ",
       "(.*) - org.gnome.Nautilus": " 󰣆 $1 ",
