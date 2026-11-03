@@ -27,5 +27,7 @@
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fastfetch";
     home.file.".config/swayosd".source = 
       config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayosd";
+    home.file.".config/rofi".source =
+      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/rofi";
   };
 }

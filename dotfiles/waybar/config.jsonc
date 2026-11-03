@@ -7,8 +7,7 @@
 
   "modules-left": ["custom/launcher", "mango/workspaces", "mango/window"],
   "modules-center": ["mpris", "clock", "idle_inhibitor"],
-  "modules-right": [
-    "mango/layout",
+  "modules-right": [ 
     "group/tray-expander",
     "backlight",
     "bluetooth",
@@ -20,7 +19,7 @@
   ],
 
   "custom/launcher": {
-    "format": "",
+    "format": " ",
     "on-click": "fuzzel",
     "tooltip": false
   },
@@ -177,7 +176,7 @@
   },
 
   "custom/expand-icon": {
-    "format": " ",
+    "format": " ",
     "tooltip": false
   },
 
