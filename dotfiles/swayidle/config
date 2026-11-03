@@ -1,4 +1,4 @@
-timeout 180 "for m in \$(mmsg get all-monitors); do mmsg dispatch sleep_monitor \"\$m\"; done" resume "for m in \$(mmsg get all-monitors); do mmsg dispatch wakeup_monitor \"\$m\"; done"
+timeout 180 "mmsg dispatch sleep_monitor,.*" resume "mmsg dispatch wakeup_monitor,.*" 
 
 timeout 300 "swaylock -f"
 
