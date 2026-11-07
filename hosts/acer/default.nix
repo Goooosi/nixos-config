@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, self, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -10,5 +10,6 @@
 
   services.acer-battery.enable = true;
   networking.hostName="acer";
+  system.configurationRevision = self.rev or self.dirtyRev or null;
   system.stateVersion = "26.05";
 }

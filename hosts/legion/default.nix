@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, self, ... }:
 
 {
   imports = [
@@ -46,6 +46,7 @@
   };
 
   networking.hostName = "legion";
+  system.configurationRevision = self.rev or self.dirtyRev or null;
   system.stateVersion = "26.05";
 }
 

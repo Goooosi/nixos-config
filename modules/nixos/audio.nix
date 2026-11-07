@@ -10,7 +10,7 @@ services.pipewire = {
   alsa.enable = true;
   alsa.support32Bit = true;
   pulse.enable = true;
-  jack.enable = true;
+  # jack.enable = true;
   
   # WirePlumber is the default session manager for PipeWire
   wireplumber.enable = true;
