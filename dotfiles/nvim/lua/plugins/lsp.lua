@@ -21,7 +21,50 @@ return {
       vim.lsp.config("ts_ls", { capabilities = capabilities })
       vim.lsp.enable("ts_ls")
 
-      vim.lsp.config("pyright", { capabilities = capabilities })
+      -- Configured Pyright with Dynamic Cross-Platform Path Detection
+      vim.lsp.config("pyright", {
+        capabilities = capabilities,
+        on_init = function(client)
+          local cwd = vim.fn.getcwd()
+          local python_path = ""
+
+          -- 1. Check for standard local virtual environments (Windows vs Unix)
+          if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+            local win_venv = cwd .. "\\.venv\\Scripts\\python.exe"
+            if vim.fn.executable(win_venv) == 1 then
+              python_path = win_venv
+            end
+          else
+            local unix_venv = cwd .. "/.venv/bin/python"
+            if vim.fn.executable(unix_venv) == 1 then
+              python_path = unix_venv
+            end
+          end
+
+          -- 2. Fallback: Lookup the active shell path (Nix DevShell / Global Environment)
+          if python_path == "" then
+            local shell_python = vim.fn.exepath("python")
+            if shell_python ~= "" then
+              python_path = shell_python
+            end
+          end
+
+          -- 3. Bind interpreter settings to the Pyright instance
+          if python_path ~= "" then
+            client.config.settings.python.pythonPath = python_path
+            client:notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+          end
+        end,
+        settings = {
+          python = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              diagnosticMode = "workspace",
+            },
+          },
+        },
+      })
       vim.lsp.enable("pyright")
 
       vim.lsp.config("nil_ls", { capabilities = capabilities })
