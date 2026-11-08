@@ -3,7 +3,7 @@ choice=$(printf 'Lock\nLogout\nSuspend\nReboot\nShutdown\n' | tofi --prompt-text
 
 case "$choice" in
   Lock)     swaylock -f ;;
-  Logout)   mmsg -d quit ;;
+  Logout)   pkill -x mango ;;
   Suspend)  systemctl suspend ;;
   Reboot)   systemctl reboot ;;
   Shutdown) systemctl poweroff ;;

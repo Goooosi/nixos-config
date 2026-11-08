@@ -3,26 +3,29 @@ blur_intensity = 0.0
 enabled = true
 tint_intensity = 0.24999999441206455
 
-[bar.default]
-background_opacity = 0.74999998323619366
-capsule = false
-capsule_border = "primary"
-capsule_fill = "surface"
-capsule_foreground = "on_surface"
-center = [ "workspaces" ]
-color = "primary"
-end = [ "tray", "notifications", "session", "launcher" ]
-font_family = "Maple Mono"
-icon_color = "error"
-layer = "top"
-margin_edge = 3
-margin_ends = 4
-margin_opposite_edge = 2
-position = "left"
-scale = 1.2000000104308128
-smart_auto_hide = false
-start = [ "cat", "clock", "temp", "battery", "volume" ]
-widget_spacing = 15
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    background_opacity = 0.74999998323619366
+    capsule = false
+    capsule_border = "primary"
+    capsule_fill = "surface"
+    capsule_foreground = "on_surface"
+    center = [ "workspaces" ]
+    color = "primary"
+    end = [ "tray", "notifications", "session", "launcher" ]
+    font_family = "Maple Mono"
+    icon_color = "error"
+    layer = "top"
+    margin_edge = 3
+    margin_ends = 4
+    margin_opposite_edge = 2
+    position = "left"
+    scale = 1.2000000104308128
+    smart_auto_hide = false
+    start = [ "cat", "clock", "temp", "battery", "volume" ]
+    widget_spacing = 15
 
 [control_center]
 hidden_tabs = [ "monitor", "power", "notifications", "screen-time" ]
@@ -84,7 +87,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lo
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -111,7 +114,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lo
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -138,7 +141,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lo
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -157,7 +160,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lo
 background_opacity = 0.96999997831881046
 
 [plugin_settings."noctalia/mpvpaper"]
-video_directory = "/home/zi/.local/share/nixos-assets"
+video_directory = "/etc/nixos/assets"
 
 [plugins]
 enabled = [ "dotnetrob/cat" ]
@@ -186,7 +189,9 @@ font_family = "Maple Mono"
     enabled = false
 
     [shell.screenshot]
+    confirm_region = true
     directory = "/home/zi/Pictures/Screenshots"
+    filename_pattern = "Screenshot %Y-%m-%d %H%M%S"
 
     [[shell.session.actions]]
     action = "lock"
@@ -238,16 +243,16 @@ wallpaper_scheme = "m3-tonal-spot"
 directory = "/etc/nixos/assets"
 
     [wallpaper.default]
-    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg" 
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.last]
-    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg" 
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/zi/.local/share/nixos-assets/wall9.jpg"
+    path = "/etc/nixos/assets/wall9.jpg"
 
     [wallpaper.monitors.eDP-2]
-    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg"
+    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
 
 [weather]
 unit = "imperial"
@@ -286,8 +291,9 @@ custom_image_colorize = true
 glyph = "accessible"
 
 [widget.media]
-capsule = true
+capsule = false
 capsule_radius = "auto"
+hide_album_art = true
 hide_when_no_media = true
 title_scroll = "on_hover"
 

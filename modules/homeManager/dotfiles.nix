@@ -7,8 +7,8 @@
 
       # ~/.config/<name>  ->  <repo>/dotfiles/<name>
       configDirs = [
-        "niri" "nvim" "kitty" "noctalia" "mango" "fuzzel" "tofi" "mako"
-        "swaylock" "swayidle" "waybar" "fastfetch" "swayosd" "rofi"
+        "niri" "nvim" "kitty" "noctalia" "mango" "tofi" "mako"
+        "swaylock" "swayidle" "waybar" "fastfetch" "swayosd"    
       ];
     in
     {

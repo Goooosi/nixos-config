@@ -21,7 +21,7 @@ read -r < "$pipe"
 geometry=$(slurp -d)
 [[ -z "$geometry" ]] && exit 1
 
-file="$dir/$(date +%Y%m%d%H%M%S).png"
+file="$dir/Screenshot $(date '+%Y-%m-%d %H%M%S').png"
 
 case "$mode" in
   clip) grim -g "$geometry" - | wl-copy --type image/png ;;
