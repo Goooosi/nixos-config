@@ -1,4 +1,4 @@
-# /etc/nixos/dotfiles/swaylock/config
+# <repo>/dotfiles/swaylock/config
 
 # Main Layout Flags (Must stand completely alone)
 clock

@@ -1,0 +1,17 @@
+font = Maple Mono NF
+font-size = 14
+width = 600
+height = 380
+anchor = center
+corner-radius = 8
+border-width = 2
+outline-width = 0
+padding-top = 16
+padding-left = 16
+result-spacing = 8
+num-results = 8
+background-color = #0F1B2D99
+border-color = #EFCB69
+text-color = #FFFFFF
+prompt-color = #EFCB69
+selection-color = #EFCB69

@@ -33,6 +33,7 @@
       wiremix
       pamixer
       bluetui
+      tofi
     ];
   };
 }

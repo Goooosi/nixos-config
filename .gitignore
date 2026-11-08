@@ -1,12 +1,11 @@
-cat > /etc/nixos/.gitignore << 'EOF'
 # Nix build outputs
 result
 result-*
-
+.direnv/
 # Editor/swap files
 *.swp
 *~
-.direnv/
+
 
 # Hardware-specific, usually fine to keep actually — remove this line if you want it tracked
 # hardware-configuration.nix
@@ -15,5 +14,5 @@ secrets/
 *.key
 id_rsa
 id_ed25519
-EOF
+
 font-size.conf

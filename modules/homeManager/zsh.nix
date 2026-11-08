@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.homeManager.zsh = { pkgs, ... }: {
+  flake.modules.homeManager.zsh = { config, pkgs, ... }: {
     home.packages = with pkgs; [ fastfetch ];
 
     programs.zsh = {
@@ -10,7 +10,7 @@
       syntaxHighlighting.enable = true;
 
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#\$HOST";
+        rebuild = "sudo nixos-rebuild switch --flake ${config.my.repoPath}#\$HOST";
         fanSpeed = "nix-shell -p lm_sensors --run 'while true; do echo \"\$(date +%T) \$(sensors | grep Tctl) | fans: \$(cat /sys/class/hwmon/hwmon*/fan*_input | tr \"\\n\" \" \")\"; sleep 1; done'";
         computerActivateLarp = "nix-shell -p cmatrix --run cmatrix";
         deleteGeneration = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations $(sudo nix-env --profile /nix/var/nix/profiles/system --list-generations | head -n -10 | awk '{print $1}')";

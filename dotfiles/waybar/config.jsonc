@@ -20,7 +20,7 @@
 
   "custom/launcher": {
     "format": " ",
-    "on-click": "fuzzel",
+    "on-click": "tofi-drun --drun-launch=true",
     "tooltip": false
   },
 
@@ -73,7 +73,7 @@
     }
   },
   "mpris": {
-    "format": "󰋎",
+    "format": " ",
     "format-paused": "<span color='grey'>{status_icon}</span>",
     "max-length": 20,
     "player-icons": { "default": "⏸", "mpv": "🎵" },

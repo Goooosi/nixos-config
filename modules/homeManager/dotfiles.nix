@@ -1,33 +1,33 @@
 { ... }:
 {
-  flake.modules.homeManager.dotfiles = { config, pkgs, ... }: {
-    home.file.".config/niri/config.kdl".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/niri/config.kdl";
-    home.file.".config/nvim".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/nvim";
-    home.file.".config/kitty".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/kitty";
-    home.file.".config/noctalia".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/noctalia";
-    home.file.".config/mango".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mango";
-    home.file.".config/fuzzel".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fuzzel";
-    home.file.".config/eww".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/eww";
-    home.file.".config/mako".source = 
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/mako";
-    home.file.".config/swaylock".source = 
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swaylock";
-    home.file.".config/swayidle".source = 
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayidle";
-    home.file.".config/waybar".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/waybar";
-    home.file.".config/fastfetch".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/fastfetch";
-    home.file.".config/swayosd".source = 
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/swayosd";
-    home.file.".config/rofi".source =
-      config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/rofi";
-  };
+  flake.modules.homeManager.dotfiles = { config, lib, ... }:
+    let
+      repo = config.my.repoPath;
+      link = path: config.lib.file.mkOutOfStoreSymlink "${repo}/${path}";
+
+      # ~/.config/<name>  ->  <repo>/dotfiles/<name>
+      configDirs = [
+        "niri" "nvim" "kitty" "noctalia" "mango" "fuzzel" "tofi" "mako"
+        "swaylock" "swayidle" "waybar" "fastfetch" "swayosd" "rofi"
+      ];
+    in
+    {
+      options.my.repoPath = lib.mkOption {
+        type = lib.types.str;
+        default = "/etc/nixos";
+        example = "/home/zi/nixos-config";
+        description = ''
+          where the config/repo is
+        '';
+      };
+
+      config = {
+        home.file =
+          lib.genAttrs (map (d: ".config/${d}") configDirs)
+            (name: { source = link "dotfiles/${lib.removePrefix ".config/" name}"; })
+          // {
+            ".local/share/nixos-assets".source = link "assets";
+          };
+      };
+    };
 }
