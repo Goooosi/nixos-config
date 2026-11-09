@@ -1,6 +1,7 @@
 font = /run/current-system/sw/share/X11/fonts/MapleMono-NF-Regular.ttf
 hint-font = false
 ascii-input = true
+hide-cursor = true
 width = 100%
 height = 100%
 corner-radius = 0
