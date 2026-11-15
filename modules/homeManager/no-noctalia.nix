@@ -16,10 +16,8 @@
           ];
         });
     };
-    programs.rofi.enable = true;
     home.packages  = with pkgs; [
       inputs.wayfreeze.packages.${pkgs.stdenv.hostPlatform.system}.wayfreeze
-      fuzzel
       swayosd
       mako
       swayidle
