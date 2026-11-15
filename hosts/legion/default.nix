@@ -30,6 +30,7 @@
       "org.vinegarhq.Sober"
       "org.jellyfin.JellyfinDesktop"
       "org.kde.kcolorchooser"
+      "fr.handbrake.ghb"
     ];
 
     overrides = {

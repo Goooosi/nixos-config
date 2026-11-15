@@ -30,7 +30,8 @@
       localsend
       lazygit
       librewolf
-      (pkgs.callPackage ../../pkgs/sony-headphones.nix {})    
+      (pkgs.callPackage ../../pkgs/sony-headphones.nix {})
+      handbrake
     ];
   };
 }
