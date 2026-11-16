@@ -18,11 +18,11 @@
       };
 
       initContent = ''
-        bindkey -v
-	      export ZLE_RPROMPT_INDENT=0
-        fastfetch 
-        export LANG=en_US.UTF-8
-	      export LC_ALL=en_US.UTF-8
+                bindkey -v
+        	      export ZLE_RPROMPT_INDENT=0
+                fastfetch 
+                export LANG=en_US.UTF-8
+        	      export LC_ALL=en_US.UTF-8
       '';
     };
 

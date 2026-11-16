@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.homeManager.desktop = { pkgs, ... }: { 
+  flake.modules.homeManager.desktop = { pkgs, ... }: {
     # programs.noctalia.enable = true;
     dconf.enable = true;
     dconf.settings."org/gnome/desktop/interface" = {
@@ -17,7 +17,7 @@
       gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
     };
 
-    home.packages  = with pkgs; [
+    home.packages = with pkgs; [
       hyprpolkitagent
       inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       swaybg

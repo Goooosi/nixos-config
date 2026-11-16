@@ -1,9 +1,35 @@
-{ lib, stdenv, fetchFromGitHub, cmake, pkg-config, ninja, git, wayland-scanner
-, makeWrapper, bluez, dbus, fontconfig, libGL, copyDesktopItems, makeDesktopItem
-, wayland, wayland-protocols, libxkbcommon, libdecor
-, libx11, libxext, libxcursor, libxi, libxrandr
-, libxfixes, libxscrnsaver, libxtst
-, libdrm, libgbm, udev, alsa-lib
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  cmake,
+  pkg-config,
+  ninja,
+  git,
+  wayland-scanner,
+  makeWrapper,
+  bluez,
+  dbus,
+  fontconfig,
+  libGL,
+  copyDesktopItems,
+  makeDesktopItem,
+  wayland,
+  wayland-protocols,
+  libxkbcommon,
+  libdecor,
+  libx11,
+  libxext,
+  libxcursor,
+  libxi,
+  libxrandr,
+  libxfixes,
+  libxscrnsaver,
+  libxtst,
+  libdrm,
+  libgbm,
+  udev,
+  alsa-lib,
 }:
 
 let
@@ -25,13 +51,22 @@ let
     owner = "libsdl-org";
     repo = "SDL";
     rev = "e4ed62ee3f7d7fda8bf8e0f09e42b14a7ac11984";
-    hash = "sha256-5H4w1/cJBRjNcg+dnCk7xURYf+31d2YtU7SO8Q7vUWk="; 
+    hash = "sha256-5H4w1/cJBRjNcg+dnCk7xURYf+31d2YtU7SO8Q7vUWk=";
   };
 
   runtimeLibs = [
-    wayland libxkbcommon libdecor libGL
-    libx11 libxext libxcursor libxi libxrandr
-    fontconfig dbus bluez
+    wayland
+    libxkbcommon
+    libdecor
+    libGL
+    libx11
+    libxext
+    libxcursor
+    libxi
+    libxrandr
+    fontconfig
+    dbus
+    bluez
   ];
 in
 stdenv.mkDerivation {
@@ -45,14 +80,37 @@ stdenv.mkDerivation {
     hash = "sha256-kEhTxLEMCUmA9gfJlZgdN8PETmoAZaRzYeUIupaXiI8=";
   };
 
-  nativeBuildInputs = [ cmake pkg-config ninja git wayland-scanner makeWrapper copyDesktopItems ];
+  nativeBuildInputs = [
+    cmake
+    pkg-config
+    ninja
+    git
+    wayland-scanner
+    makeWrapper
+    copyDesktopItems
+  ];
 
   buildInputs = [
-    bluez dbus fontconfig libGL
-    wayland wayland-protocols libxkbcommon libdecor
-    libx11 libxext libxcursor libxi libxrandr
-    libxfixes libxscrnsaver libxtst
-    libdrm libgbm udev alsa-lib
+    bluez
+    dbus
+    fontconfig
+    libGL
+    wayland
+    wayland-protocols
+    libxkbcommon
+    libdecor
+    libx11
+    libxext
+    libxcursor
+    libxi
+    libxrandr
+    libxfixes
+    libxscrnsaver
+    libxtst
+    libdrm
+    libgbm
+    udev
+    alsa-lib
   ];
 
   cmakeFlags = [
@@ -83,7 +141,11 @@ stdenv.mkDerivation {
       comment = "Control Sony headphones from your desktop";
       exec = "SonyHeadphonesClient";
       icon = "audio-headphones";
-      categories = [ "Audio" "AudioVideo" "Settings" ];
+      categories = [
+        "Audio"
+        "AudioVideo"
+        "Settings"
+      ];
       terminal = false;
     })
   ];

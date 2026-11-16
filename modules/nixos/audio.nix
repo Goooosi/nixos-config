@@ -16,13 +16,23 @@
     };
 
     environment.variables = {
-      LV2_PATH  = "/run/current-system/sw/lib/lv2:/etc/profiles/per-user/$USER/lib/lv2:$HOME/.lv2";
+      LV2_PATH = "/run/current-system/sw/lib/lv2:/etc/profiles/per-user/$USER/lib/lv2:$HOME/.lv2";
       VST3_PATH = "/run/current-system/sw/lib/vst3:/etc/profiles/per-user/$USER/lib/vst3:$HOME/.vst3";
     };
 
     security.pam.loginLimits = [
-      { domain = "@audio"; item = "memlock"; type = "-"; value = "unlimited"; }
-      { domain = "@audio"; item = "rtprio";  type = "-"; value = "99"; }
+      {
+        domain = "@audio";
+        item = "memlock";
+        type = "-";
+        value = "unlimited";
+      }
+      {
+        domain = "@audio";
+        item = "rtprio";
+        type = "-";
+        value = "99";
+      }
     ];
   };
 }

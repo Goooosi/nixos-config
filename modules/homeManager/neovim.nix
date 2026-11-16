@@ -9,9 +9,9 @@
       fd
       nodejs
       git
-      typescript-language-server  
-      pyright                                      
-      nil                                         
+      typescript-language-server
+      pyright
+      nil
       lua-language-server
       alejandra
       tree-sitter

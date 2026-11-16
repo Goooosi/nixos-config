@@ -1,6 +1,7 @@
 { ... }:
 {
-  flake.modules.nixos.fuzzel-fix = { pkgs, ... }:
+  flake.modules.nixos.fuzzel-fix =
+    { pkgs, ... }:
     let
       chooser = pkgs.writeShellScript "xdpw-chooser" ''
         cache="$XDG_RUNTIME_DIR/xdpw-chooser-last"
@@ -13,7 +14,7 @@
 
         fresh "$cancel" 5 && exit 0
         fresh "$cache" 15 && { ${pkgs.coreutils}/bin/cat "$cache"; exit 0; }
-        
+
         ${pkgs.fuzzel}/bin/fuzzel -d --prompt "Select what to share " --keyboard-focus=on-demand --no-exit-on-keyboard-focus-loss < <(printf '%s\n' "$input") > "$XDG_RUNTIME_DIR/xdpw-fuzzel-choice" &
         FUZZEL_PID=$!
 
@@ -46,4 +47,3 @@
       };
     };
 }
-

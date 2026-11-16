@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     waybar = {
-      url="github:Alexays/Waybar";
+      url = "github:Alexays/Waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wayfreeze.url = "github:jappie3/wayfreeze";
@@ -29,12 +29,12 @@
     import-tree.url = "github:vic/import-tree";
   };
 
-  outputs = inputs@{ flake-parts, import-tree, ... }:
-  flake-parts.lib.mkFlake { inherit inputs; } {
-    imports = [
-      inputs.flake-parts.flakeModules.modules
-      (import-tree ./modules)
-    ];
-  };
+  outputs =
+    inputs@{ flake-parts, import-tree, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.flake-parts.flakeModules.modules
+        (import-tree ./modules)
+      ];
+    };
 }
-

@@ -4,19 +4,17 @@
     programs.waybar = {
       enable = true;
       package = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
-      doCheck = false;
-    
-      buildInputs = (old.buildInputs or []) ++ [ pkgs.libcava ];
+        doCheck = false;
 
-      mesonFlags =
-        (builtins.filter (f: !(pkgs.lib.hasPrefix "-Dtests=" f)) (old.mesonFlags or []))
-        ++ [ 
+        buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.libcava ];
+
+        mesonFlags = (builtins.filter (f: !(pkgs.lib.hasPrefix "-Dtests=" f)) (old.mesonFlags or [ ])) ++ [
           "-Dtests=disabled"
           "-Dcava=enabled" # 2. Explicitly force CAVA module compilation
-          ];
-        });
+        ];
+      });
     };
-    home.packages  = with pkgs; [
+    home.packages = with pkgs; [
       inputs.wayfreeze.packages.${pkgs.stdenv.hostPlatform.system}.wayfreeze
       swayosd
       mako

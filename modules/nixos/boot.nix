@@ -9,7 +9,7 @@
       enable = true;
       compressor = "zstd";
       shrinkerEnabled = true;
-      zpool="zsmalloc"; 
+      zpool = "zsmalloc";
     };
   };
 }

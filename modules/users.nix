@@ -8,7 +8,10 @@
     users.users.zi = {
       isNormalUser = true;
       description = "zi";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
 
     home-manager = {
@@ -22,7 +25,13 @@
           stateVersion = "26.05";
         };
         imports = with inputs.self.modules.homeManager; [
-          desktop dotfiles spicetify zsh packages neovim no-noctalia
+          desktop
+          dotfiles
+          spicetify
+          zsh
+          packages
+          neovim
+          no-noctalia
         ];
       };
     };

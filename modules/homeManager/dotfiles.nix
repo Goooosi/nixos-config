@@ -1,14 +1,24 @@
 { ... }:
 {
-  flake.modules.homeManager.dotfiles = { config, lib, ... }:
+  flake.modules.homeManager.dotfiles =
+    { config, lib, ... }:
     let
       repo = config.my.repoPath;
       link = path: config.lib.file.mkOutOfStoreSymlink "${repo}/${path}";
 
-      # ~/.config/<name>  ->  <repo>/dotfiles/<name>
       configDirs = [
-        "niri" "nvim" "kitty" "noctalia" "mango" "tofi" "mako"
-        "swaylock" "swayidle" "waybar" "fastfetch" "swayosd"    
+        "niri"
+        "nvim"
+        "kitty"
+        "noctalia"
+        "mango"
+        "tofi"
+        "mako"
+        "swaylock"
+        "swayidle"
+        "waybar"
+        "fastfetch"
+        "swayosd"
       ];
     in
     {
@@ -23,8 +33,9 @@
 
       config = {
         home.file =
-          lib.genAttrs (map (d: ".config/${d}") configDirs)
-            (name: { source = link "dotfiles/${lib.removePrefix ".config/" name}"; })
+          lib.genAttrs (map (d: ".config/${d}") configDirs) (name: {
+            source = link "dotfiles/${lib.removePrefix ".config/" name}";
+          })
           // {
             ".local/share/nixos-assets".source = link "assets";
           };

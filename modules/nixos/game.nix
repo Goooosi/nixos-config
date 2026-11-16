@@ -1,6 +1,6 @@
 { ... }:
 {
-flake.modules.nixos.game = { ... }: {
-  programs.steam.enable = true;
-};
+  flake.modules.nixos.game = { ... }: {
+    programs.steam.enable = true;
+  };
 }
