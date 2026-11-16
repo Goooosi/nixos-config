@@ -1,6 +1,5 @@
 { ... }: {
   flake.modules.homeManager.packages = { pkgs, ... }: {
-    nixpkgs.config.allowUnfree = true;
 
     programs.obsidian = {
       enable = true;
@@ -31,7 +30,6 @@
       lazygit
       librewolf
       (pkgs.callPackage ../../pkgs/sony-headphones.nix {})
-      handbrake
     ];
   };
 }

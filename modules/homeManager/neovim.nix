@@ -15,7 +15,6 @@
       lua-language-server
       alejandra
       tree-sitter
-      nil
       gh
       gcc
     ];

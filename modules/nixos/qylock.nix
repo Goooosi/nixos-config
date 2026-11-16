@@ -26,8 +26,7 @@
           qtmultimedia
           qtsvg
           qt5compat
-          qtshadertools
-          pkgs.bibata-cursors 
+          qtshadertools 
         ];
         settings = {
           Theme = {

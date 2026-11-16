@@ -10,7 +10,7 @@
     inputs.self.modules.nixos.nvidia
     # broken on kernel version 7.2.11 and broken on lts????
     inputs.self.modules.nixos.legion-fan-curve
-    (inputs.self + "/users/users.nix")
+    inputs.self.modules.nixos.zi
     inputs.nix-flatpak.nixosModules.nix-flatpak
     # inputs.self.modules.nixos.printing
   ];
@@ -47,7 +47,6 @@
   };
 
   networking.hostName = "legion";
-  system.configurationRevision = self.rev or self.dirtyRev or null;
   system.stateVersion = "26.05";
 }
 
