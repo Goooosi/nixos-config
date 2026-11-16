@@ -19,10 +19,6 @@
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    waybar = {
-      url = "github:Alexays/Waybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     wayfreeze.url = "github:jappie3/wayfreeze";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     flake-parts.url = "github:hercules-ci/flake-parts";
