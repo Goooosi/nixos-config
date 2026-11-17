@@ -1,4 +1,3 @@
-# modules/users.nix
 { inputs, ... }:
 {
   flake.modules.nixos.zi = {

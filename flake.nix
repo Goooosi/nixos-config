@@ -22,7 +22,7 @@
     wayfreeze.url = "github:jappie3/wayfreeze";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
+    import-tree.url = "github:denful/import-tree";
   };
 
   outputs =
