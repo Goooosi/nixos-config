@@ -35,7 +35,7 @@
 
       home.packages = with pkgs; [
         hyprpolkitagent
-        inputs.noctalia.packages.${pkgs.stdenv.hostplatform.system}.default
+        inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         swaybg
         xwayland-satellite
       ];
