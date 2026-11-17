@@ -146,3 +146,21 @@ animation: repeat;
         color: #4a4a4a;
     }
 }
+
+menu {
+  background-color: @background;
+  border: 1px solid alpha(@foreground, 0.3);
+  border-radius: 8px;
+}
+
+menu * {
+  color: @foreground;
+}
+
+menu menuitem:hover {
+  background-color: alpha(@foreground, 0.15);
+}
+
+menu separator {
+  background-color: alpha(@foreground, 0.3);
+}
