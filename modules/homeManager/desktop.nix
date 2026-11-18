@@ -17,10 +17,10 @@
       '';
     in
     {
-      dconf.enable = true;
       dconf.settings."org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         gtk-theme = "adw-gtk3-dark";
+        icon-theme = "Adwaita";
       };
 
       gtk = {
@@ -28,6 +28,10 @@
         theme = {
           name = "adw-gtk3-dark";
           package = pkgs.adw-gtk3;
+        };
+        iconTheme = {
+          name = "Adwaita";
+          package = pkgs.adwaita-icon-theme;
         };
         gtk3.extraCss = colors;
         gtk4.extraCss = colors;
@@ -38,6 +42,8 @@
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         swaybg
         xwayland-satellite
+        gnome-themes-extra
+        ffmpegthumbnailer
       ];
     };
 }
