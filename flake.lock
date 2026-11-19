@@ -102,11 +102,11 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1794993074,
-        "narHash": "sha256-7hqlVEp3REaIYOyoK4JTCxbUd+CUU85ExS4rcpvAE8w=",
+        "lastModified": 1795074649,
+        "narHash": "sha256-z6vbG/1xvuF4tI8NfmDSihtK0RYVbeji0FpItU8NXbY=",
         "owner": "mangowm",
         "repo": "mango",
-        "rev": "8b87008eab36e88030243f008d161a7c90c9988a",
+        "rev": "39e26f27b6ebbec3f0fcfe9ae535038acd4aba46",
         "type": "github"
       },
       "original": {
@@ -211,11 +211,19 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1795044204,
         "narHash": "sha256-xJokWg3xB3Qte6yB0SsgYgc4Y/aYJxGKFR3iMyIAZww=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
         "rev": "2edb46da9cd2acaba9c89e0033b8d00ad1cfc0a7",
+=======
+        "lastModified": 1795109055,
+        "narHash": "sha256-aYa8thBtObLfwM29BtpqnV+fs+1JUnkb0EDliLmJwCg=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "6bc8abe9250575a15b1b3b88d993906551fcacf0",
+>>>>>>> ede669a (update)
         "type": "github"
       },
       "original": {
