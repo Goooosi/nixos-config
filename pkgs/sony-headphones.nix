@@ -36,21 +36,21 @@ let
   fmt-src = fetchFromGitHub {
     owner = "fmtlib";
     repo = "fmt";
-    rev = "88a0ae2020a22c6ced639703b72ad4fd8d9ae1d4";
-    hash = "sha256-0+FB+OuaU3mo3I+M12vmdtiss8PLQ+jlw4gJOXScNto=";
+    rev = "14ac0d5a9d40aef14f50954069c1e10971abb0b2";
+    hash = "sha256-fmIpY57ait7eYjMbAm/VoPuZMHHlKNvJN7syUVTSPM4=";
   };
 
   imgui-src = fetchFromGitHub {
     owner = "ocornut";
     repo = "imgui";
-    rev = "dac07199cfd761113d966eb8ad739254e10df2fe";
+    rev = "77fe4588e6af934b4167b91312174ca3fbb0d71a";
     hash = "sha256-wHJliNAMMLpfy2R3weHIPOtaJiZMPxk2S/n7uJPLvzM=";
   };
 
   sdl3-src = fetchFromGitHub {
     owner = "libsdl-org";
     repo = "SDL";
-    rev = "e4ed62ee3f7d7fda8bf8e0f09e42b14a7ac11984";
+    rev = "2ca42fcc708e11a4af1c4df2aa4106e2609088f1";
     hash = "sha256-5H4w1/cJBRjNcg+dnCk7xURYf+31d2YtU7SO8Q7vUWk=";
   };
 
