@@ -71,13 +71,13 @@ let
 in
 stdenv.mkDerivation {
   pname = "sony-headphones-client";
-  version = "unstable-2026-10-25";
+  version = "unstable-2026-11-16";
 
   src = fetchFromGitHub {
     owner = "mos9527";
     repo = "SonyHeadphonesClient";
-    rev = "8f4808cb635f5a176df0b7b5aea959818be5129e";
-    hash = "sha256-kEhTxLEMCUmA9gfJlZgdN8PETmoAZaRzYeUIupaXiI8=";
+    rev = "17c7cd51e70740782828dd5c3d1432a9b3364684";
+    hash = "sha256-OTm5SOWBvL98ltudyVVI9ctXI3ZO8ZQiHiYs5pyUZyo=";
   };
 
   nativeBuildInputs = [
