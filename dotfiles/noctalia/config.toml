@@ -160,7 +160,7 @@ widget_order = [ "lockscreen-login-box@eDP-2", "lockscreen-login-box@winit", "lo
 background_opacity = 0.96999997831881046
 
 [plugin_settings."noctalia/mpvpaper"]
-video_directory = "/etc/nixos/assets"
+video_directory = "/home/zi/.local/share/nixos-assets"
 
 [plugins]
 enabled = [ "dotnetrob/cat" ]
@@ -240,19 +240,19 @@ wallpaper_scheme = "m3-tonal-spot"
     enable_builtin_templates = false
 
 [wallpaper]
-directory = "/etc/nixos/assets"
+directory = "/home/zi/.local/share/nixos-assets"
 
     [wallpaper.default]
-    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
+    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.last]
-    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
+    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/etc/nixos/assets/wall9.jpg"
+    path = "/home/zi/.local/share/nixos-assets/wall9.jpg"
 
     [wallpaper.monitors.eDP-2]
-    path = "/etc/nixos/assets/wallhaven-0p8wee.jpg"
+    path = "/home/zi/.local/share/nixos-assets/wallhaven-0p8wee.jpg"
 
 [weather]
 unit = "imperial"
