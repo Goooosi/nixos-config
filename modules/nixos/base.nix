@@ -12,7 +12,6 @@
       qylock
       hardware
       noctalia-cache
-      fuzzel-fix
     ];
     system.configurationRevision = self.rev or self.dirtyRev or null;
   };
