@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.base = { self, ... }: {
+  flake.modules.nixos.base = { ... }: {
     imports = with inputs.self.modules.nixos; [
       boot
       fonts
@@ -13,6 +13,6 @@
       hardware
       noctalia-cache
     ];
-    system.configurationRevision = self.rev or self.dirtyRev or null;
+    system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   };
 }
