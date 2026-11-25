@@ -17,6 +17,7 @@ in
         game
         nvidia
         legion-fan-curve
+        flatpak
       ])
       ++ [
         ./_legion/hardware-configuration.nix
@@ -26,30 +27,34 @@ in
     home-manager.users.${user}.imports = [ inputs.self.modules.homeManager.music ];
 
     services.flatpak = {
-      enable = true;
-      remotes = [
-        {
-          name = "flathub";
-          location = "https://flathub.org";
-        }
-      ];
       packages = [
-        "org.vinegarhq.Sober"
         "org.jellyfin.JellyfinDesktop"
         "org.kde.kcolorchooser"
         "fr.handbrake.ghb"
       ];
-      overrides."org.vinegarhq.Sober".Environment = {
-        "__NV_PRIME_RENDER_OFFLOAD" = "1";
-        "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
-        "__VK_LAYER_NV_optimus" = "NVIDIA_only";
-        "VK_DRIVER_FILES" = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/nvidia_icd.i686.json";
-      };
-      uninstallUnmanaged = true;
     };
-
+    # move this into boot.nix and add a contional to use which hosts config
+    boot.tmp.useTmpfs = true;
+    boot.tmp.tmpfsSize = "25%";
+    boot.zswap.maxPoolPercent = 15;
+    boot.tmp.cleanOnBoot = true;
+    boot.kernel.sysctl = {
+      "vm.swappiness" = 15;
+    };
+    systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
+    nix.settings.auto-optimise-store = true;
+    swapDevices = [
+      {
+        device = "/var/lib/swapfile";
+        size = 16 * 1024;
+        options = [ "discard=once" ];
+      }
+    ];
+    fileSystems."/".options = [
+      "noatime"
+      "defaults"
+    ];
+    system.stateVersion = "26.05";
     networking.hostName = "legion";
-    system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-    system.stateVersion = top.config.flake.meta.stateVersion;
   };
 }

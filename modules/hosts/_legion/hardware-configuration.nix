@@ -23,22 +23,10 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "25%";
-  boot.zswap.maxPoolPercent = 15;
-  boot.tmp.cleanOnBoot = true;
-  boot.kernel.sysctl = {
-    "vm.swappiness" = 15;
-  };
-  systemd.services.nix-daemon.environment.TMPDIR = "/var/tmp";
-  nix.settings.auto-optimise-store = true;
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3d506471-8e02-44c9-9026-c54c3501ad60";
     fsType = "ext4";
-    options = [
-      "defaults"
-      "noatime"
-    ];
   };
 
   fileSystems."/boot" = {
@@ -50,13 +38,7 @@
     ];
   };
 
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-      options = [ "discard=once" ];
-    }
-  ];
+  swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.nixos.nvidia = { config, pkgs, ... }: {
+  flake.modules.nixos.nvidia = { config, ... }: {
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       modesetting.enable = true;
@@ -16,6 +16,12 @@
         amdgpuBusId = "PCI:53:0:0";
         nvidiaBusId = "PCI:1:0:0";
       };
+    };
+  };
+  flake.modules.nixos.hardware = { ... }: {
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
     };
   };
 }

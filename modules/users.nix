@@ -4,23 +4,17 @@ let
 in
 {
   flake.modules.nixos.zi = {
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
+    imports = [ inputs.self.modules.nixos.home-manager ];
 
-    users.users.root.hashedPassword = "!";
     users.users.${user} = {
       isNormalUser = true;
-      description = user;
       extraGroups = [
         "networkmanager"
         "wheel"
       ];
     };
 
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      users.${user}.imports = [ inputs.self.modules.homeManager.zi ];
-    };
+    home-manager.users.${user}.imports = [ inputs.self.modules.homeManager.zi ];
   };
 
   flake.modules.homeManager.zi = {
@@ -34,10 +28,6 @@ in
       no-noctalia
     ];
 
-    home = {
-      username = user;
-      homeDirectory = "/home/${user}";
-      stateVersion = top.config.flake.meta.stateVersion;
-    };
+    home.stateVersion = top.config.flake.meta.stateVersion;
   };
 }

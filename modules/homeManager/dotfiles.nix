@@ -1,9 +1,9 @@
-{ ... }:
+top@{ ... }:
 {
   flake.modules.homeManager.dotfiles =
     { config, lib, ... }:
     let
-      repo = config.my.repoPath;
+      repo = top.config.flake.meta.repoPath;
       link = path: config.lib.file.mkOutOfStoreSymlink "${repo}/${path}";
 
       configDirs = [
@@ -19,26 +19,16 @@
         "waybar"
         "fastfetch"
         "swayosd"
+        "starship"
       ];
     in
     {
-      options.my.repoPath = lib.mkOption {
-        type = lib.types.str;
-        default = "/etc/nixos";
-        example = "/home/zi/nixos-config";
-        description = ''
-          where the config/repo is
-        '';
-      };
-
-      config = {
-        home.file =
-          lib.genAttrs (map (d: ".config/${d}") configDirs) (name: {
-            source = link "dotfiles/${lib.removePrefix ".config/" name}";
-          })
-          // {
-            ".local/share/nixos-assets".source = link "assets";
-          };
-      };
+      home.file =
+        lib.genAttrs (map (d: ".config/${d}") configDirs) (name: {
+          source = link "dotfiles/${lib.removePrefix ".config/" name}";
+        })
+        // {
+          ".local/share/nixos-assets".source = link "assets";
+        };
     };
 }

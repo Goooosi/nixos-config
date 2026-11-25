@@ -8,5 +8,6 @@
   config.flake.meta = {
     username = "zi";
     stateVersion = "26.05";
+    repoPath = "/etc/nixos";
   };
 }

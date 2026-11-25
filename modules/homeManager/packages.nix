@@ -18,12 +18,6 @@
       nautilus
       postman
       proton-vpn
-      (python314.withPackages (
-        ps: with ps; [
-          tkinter
-          pillow
-        ]
-      ))
       resources
       usbimager
       vesktop
@@ -31,6 +25,7 @@
       localsend
       lazygit
       librewolf
+      fastfetch
       (pkgs.callPackage ../../pkgs/sony-headphones.nix { })
     ];
   };

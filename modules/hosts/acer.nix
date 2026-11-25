@@ -16,8 +16,7 @@ top@{ inputs, ... }:
 
     services.acer-battery.enable = true;
 
+    system.stateVersion = "26.05";
     networking.hostName = "acer";
-    system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-    system.stateVersion = top.config.flake.meta.stateVersion;
   };
 }

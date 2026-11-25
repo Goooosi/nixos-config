@@ -1,6 +1,6 @@
-{ ... }:
+{ inputs, ... }:
 {
-  flake.modules.nixos.wm = { pkgs, inputs, ... }: {
+  flake.modules.nixos.wm = { pkgs, ... }: {
     imports = [ inputs.mangowm.nixosModules.mango ];
     programs.mango.enable = true;
     programs.niri.enable = true;
