@@ -19,7 +19,6 @@ top@{ ... }:
         "waybar"
         "fastfetch"
         "swayosd"
-        "starship"
       ];
     in
     {
@@ -28,6 +27,7 @@ top@{ ... }:
           source = link "dotfiles/${lib.removePrefix ".config/" name}";
         })
         // {
+          ".config/starship.toml".source = link "dotfiles/starship/starship.toml";
           ".local/share/nixos-assets".source = link "assets";
         };
     };

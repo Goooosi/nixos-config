@@ -14,6 +14,7 @@
       hardware
       noctalia-cache
       home-manager
+      shell
     ];
     system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   };

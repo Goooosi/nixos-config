@@ -29,9 +29,12 @@ top@{ inputs, ... }:
         };
 
         initContent = ''
-                  bindkey -v
-          	      export ZLE_RPROMPT_INDENT=0
-                  fastfetch 
+                          bindkey -v
+                  	      export ZLE_RPROMPT_INDENT=0
+                            if [[ -o interactive ]] && [[ -z "$FASTFETCH_RAN" ]]; then
+            export FASTFETCH_RAN=1
+            fastfetch
+          fi
         '';
       };
 
