@@ -28,6 +28,6 @@ in
       no-noctalia
     ];
 
-    home.stateVersion = top.config.flake.meta.stateVersion;
+    home.stateVersion = "26.05"; 
   };
 }
